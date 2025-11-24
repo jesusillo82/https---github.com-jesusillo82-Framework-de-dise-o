@@ -283,4 +283,15 @@ footer a {
     flex-wrap: wrap;/* si no caben en una fila, que pasen a la siguiente. Por defecto es non wrap*/
     gap: 1rem;
   }
+
+  #footerContacto{
+    margin-top: 2rem;
+
+  }
+
+  #icoRedesSociales h4{
+    text-align: left;
+    margin-top: 2rem;
+    
+  }
 }
