@@ -1,0 +1,263 @@
+/* tipografia del proyecto. Usare el selector root*/
+
+:root {
+
+  --color-principal: white;
+  /*blanco*/
+  --color-secundario: #3268A6;
+  /*azul*/
+  --color-terciario: #BA0B2D;
+  /*rojo*/
+
+}
+
+/* aplico*/
+
+/*estilo general de toda la web*/
+body {
+  background-color: var(--color-principal);
+  /* color fondo */
+  color: var(--color-secundario);
+  /* color texto */
+  padding-top: 3rem;
+  /* evita que el navbar tape el titulo del carrusel*/
+}
+
+
+/*-------------- sección hero --------------------*/
+.hero-container {
+  background: linear-gradient(to bottom, var(--color-secundario), #1E4E7A);/* degradado azul*/
+  color: var(--color-principal);
+  /* texto blanco*/
+  padding: 2rem;/* espacio interno*/
+  border-radius: 10% 10% 10% 10%;/* bordes redondeados arriba*/
+}
+
+/* eslogan*/
+.hero-container h3{
+  font-size: 3rem;
+  text-shadow: 2px 2px 3px var(--color-terciario);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* ---------- botones y hover animados --------*/
+.botones{
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 0.8rem;
+  text-decoration: none;
+  background-color: var(--color-terciario);
+  border-radius: 20% 20% 10% 10%;
+  color: var(--color-principal);  
+}
+
+/* aplico sombra y escala según requisitos*/
+.botones:hover {
+  transform: scale(1.2);/* efecto zoom al pasar el raton*/
+  box-shadow: 2px 2px 10px var(--color-principal);/* sombra al pasar el raton*/
+  transition: transform 0.4s;/* duracion de la transicion*/
+}
+
+
+
+/* carrusel*/
+#carouselExampleDark {
+  background-color: var(--color-secundario);
+  /*fondo del carrusel*/
+}
+
+
+#carouselExampleDark .carousel-item {
+  background-color: var(--color-secundario);
+}
+
+
+#carouselExampleDark .carousel-item img {
+  background-color: var(--color-secundario);
+  height: 70vh;
+  /*defecto */
+  /*object-fit: cover;*/
+  object-fit: cover;
+  /* si quiero que la imagen cubra todo el espacio usare cover*/
+}
+
+/* contador del carrusel*/
+.contador-carousel {
+  
+  background: linear-gradient(var(--color-terciario));
+ 
+  color: #fff;
+  padding: 2;
+  border-radius: 1rem;
+  
+
+}
+
+/* imagen modal noticia carrusel*/
+.imagenesModalNoticiaCarrusel{
+  width: 100%; /* ancho completo del contenedor*/
+  height: 200px;/* altura 25% del contenedor*/
+  object-fit: cover; /* para que la imagen no se deforme. Recorta proporcionalmente */
+}
+
+
+
+
+
+
+/** resumen seccion noticias */
+section #seccion-resumen {
+
+  color: var(--color-principal);
+}
+
+
+
+
+/* seccion CARD*/
+.card {
+
+  background-color: aliceblue;
+  margin: 1rem;
+
+}
+
+.card h5 {
+  color: var(--color-terciario);
+  font-size:  1.5rem;
+  font-weight: bold;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+}
+.card:hover {
+  margin: 2rem;
+  box-shadow:rosybrown 2px 2px 10px;
+  transform: scale(1.2);
+  /* efecto zoom al pasar el raton*/
+  transition: transform 0.4s;
+  /* duracion de la transicion*/
+}
+
+/* pie de pagina*/
+footer {
+  background-color: var(--color-secundario);
+  color: var(--color-principal);
+}
+
+footer #container-footer {
+  background-color: var(--color-secundario);
+  color: var(--color-principal);
+}
+
+/*enlaces footer*/
+footer a {
+  color: var(--color-principal);
+  font-weight: bolder;
+  /* grosor texto*/
+  text-decoration: none;
+  /*quito subrayado*/
+}
+
+
+
+
+
+
+/* ------------------------------  clases propias ----------------- */
+.texto-titulos {
+  color: var(--color-terciario);
+  text-decoration: solid;
+ 
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin-top: 1rem;
+
+}
+
+
+.texto-parrafos {
+
+  color: var(--color-secundario);
+  font-family: Georgia, 'Times New Roman', Times, serif;/* tipografia para cuerpos de textos*/
+ 
+}
+
+
+/* estilos enlaces navbar*/
+
+.navBarMenu {
+  background-color: white;
+}
+
+.navBarMenu .nav-link {
+  color: var(--color-secundario) !important;
+}
+
+.texto-enlaces-navbar {
+  color: var(--color-secundario);
+  /*azul*/
+  font-weight: bold;
+  /* negrita*/
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  /* mayusculas*/
+
+}
+
+/** efecto hover enlaces navbar*/
+.texto-enlaces-navbar:hover {
+  color: var(--color-terciario);
+  /* rojo al pasar el raton*/
+}
+
+
+.iconos-resumen {
+
+  color: var(--color-secundario);
+  font-size: 3rem;
+}
+
+.iconos-footer-contacto {
+  font-size: 1.5rem;
+  /*color*/
+  margin-right: 1rem;
+  /* separacion icono*/
+  color: var(--color-principal);
+}
+
+.iconos-redesSociales-footer{
+  display: flex;
+  flex-direction: column;/* alineados en vertical*/
+  gap: 0.5rem;
+}
+
+
+
+
+/* ---------------------------------  MEDIA QUERYS ------------------------------------------*/
+
+
+/* ---------- carrusel de noticias --------------------*/
+
+@media (max-width: 768px) {
+  #carouselExampleDark .carousel-item img {
+    height: 40vh;
+    /* para moviles grandes y tabletas*/
+  }
+}
+
+ /*moviles pequeños*/
+@media (max-width: 576px) {
+
+  #carouselExampleDarkcarouselExampleDark .carousel-item img {
+    height: 30vh;
+   
+  }
+
+  .iconos-redesSociales-footer{
+    flex-direction: row;/* alineados en horizontal*/
+    justify-content: center;
+    flex-wrap: wrap;/* si no caben en una fila, que pasen a la siguiente. Por defecto es non wrap*/
+    gap: 1rem;
+  }
+}

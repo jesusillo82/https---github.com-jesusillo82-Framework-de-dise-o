@@ -1,0 +1,1116 @@
+<!--
+    Se valorará positivamente la inclusión de nuevas secciones que aporten tanto información
+    como complejidad a la sección principal.
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Bootstrap</title>
+    <!-- bootstrap desde node_modules-->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+
+    <!-- iconos de bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- incluyo animate.css para animaciones-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- estilos propios-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Encabezado (header de tipo navbar): 
+
+        - Un título llamativo con el nombre de la web.
+        - Un logo.
+        - Una barra de navegación con al menos tres enlaces (sin funcionalidad).
+
+        nota--- el logo incluye el titulo
+    
+        <h1> Tu Arquitectura web</h1>
+    -->
+
+    <header>
+
+        <!-- Intro settings -->
+        <style>
+            /* Default height for small devices */
+            #intro-example {
+                height: 40rem;
+            }
+
+            /* Height for devices larger than 992px */
+            @media (min-width: 992px) {
+                #intro-example {
+                    height: 40rem;
+
+                }
+            }
+        </style>
+
+
+        <!--
+        <div class="container row">
+            <div class="col text-center d-flex justify-content-center align-items-center h-100">
+                <a href="index.html"><img id="logoEmpresa" src="imagenes/logoPrueba2.jpg" alt="logo_empresa"
+                        width="300px" height="180px"></a>
+            </div>
+
+        </div>
+    -->
+
+
+        <!-- barra de navegacion
+
+                NavbarNavbar responsive con enlaces a las secciones principales: Inicio, Equipos,
+                Resultados, Clasificaciones, Jugadores, Árbitros, Contacto.
+        -->
+        <nav class="navbar navbar-expand-lg fixed-top navBarMenu">
+
+            <div class="container-fluid">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <!-- Inicio-->
+                        <li class="nav-item">
+                            <a class="nav-link active texto-enlaces-navbar" aria-current="page" href="#">Inicio
+                            </a>
+                        </li>
+
+                        <!-- Equipos-->
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle texto-enlaces-navbar" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Equipos
+                            </a>
+                            <ul class="dropdown-menu texto-enlaces-navbar">
+                                <li><a class="dropdown-item" href="#"> A tope Siempre (ESO 3B)</a></li>
+                                <li><a class="dropdown-item" href="#">Los máquinas (FP Desarrollo web)</a></li>
+                                <li><a class="dropdown-item" href="#"> Los que faltaban(Bachillerato 1ºA)</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Resultados Cuando uso href con un a si abro desde JS debo hacer un preventDefault para que no recargue la pagina-->
+                        <li class="nav-item texto-enlaces-navbar">
+                            <a class="nav-link active" id="enlaceResultados" aria-current="page" href="#">Resultados
+                            </a>
+                        </li>
+                        <!-- Clasificaciones-->
+                        <li class="nav-item texto-enlaces-navbar">
+                            <!-- abrira un modal con las clasificaciones mediante data-bs-toggle le decimos que abra un modal
+                             y  mediante data-bs-target que modal vamos a abrir-->
+                            <a class="nav-link active " aria-current="page" href="#" data-bs-toggle="modal"
+                                data-bs-target="#modalClasificaciones">Clasificaciones
+                            </a>
+                        </li>
+                        <!-- Jugadores-->
+                        <li class="nav-item">
+                            <a class="nav-link active texto-enlaces-navbar" aria-current="page" href="#">Jugadores
+                            </a>
+                        </li>
+                        <!-- Árbitros-->
+                        <li class="nav-item">
+                            <a class="nav-link active texto-enlaces-navbar" aria-current="page" href="#">Árbitros
+                            </a>
+                        </li>
+                        <!-- Contacto-->
+                        <li class="nav-item">
+                            <a class="nav-link active texto-enlaces-navbar" aria-current="page" href="#">Contacto
+                            </a>
+                        </li>
+
+
+
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- ****************************************** MODALES NAVBAR ***************************-->
+
+
+    <!-- modal para clasificaciones. Lo abro desde html
+     usa animación bunceIn-->
+
+    <div class="modal fade" id="modalClasificaciones">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable animate__animated animate__bounceIn">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header bg-primary text-white">
+                    <h4 class="modal-title text-center fs-2">Clasificaciones</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body aqui meto las clasificaciones-->
+                <div class="modal-body">
+                    <h5 class="text-center text-primary">Fútbol-sala</h5>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Posición</th>
+                                <th>Equipo</th>
+                                <th>Puntos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Los Rayo F.C (ESO 1ºC)</td>
+                                <td>15</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Infatigables (2º Bachillerato)</td>
+                                <td>12</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Sin tregua F.C ( FP redes)</td>
+                                <td>10</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h5 class="text-center text-primary ">Baloncesto</h5>
+                    <table class="table table-striped">
+
+                        <thead>
+                            <tr>
+                                <th>Posición</th>
+                                <th>Equipo</th>
+                                <th>Puntos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td> A tope Siempre (ESO 3B)</td>
+                                <td>18</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Los máquinas (FP Desarrollo web)</td>
+                                <td>17</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td> Los que faltaban(Bachillerato 1ºA)</td>
+                                <td>11</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h5></h5>
+                    <h5 class="text-center text-primary">Voleybol</h5>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Posición</th>
+                                <th>Equipo</th>
+                                <th>Puntos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Los pringels (FP administración)</td>
+                                <td>20</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Los chunguitos (fp automoción)</td>
+                                <td>16</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Mejor callados (ESO 4A)</td>
+                                <td>13</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h5></h5>
+                    <h5 class="text-center text-primary">Atletismo</h5>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Posición</th>
+                                <th>Atleta</th>
+                                <th>Tiempo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Jesús Bernabé Imedio</td>
+                                <td>10.5s</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Sonia Martinez</td>
+                                <td>11.0s</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Jose Manuel Carpintero</td>
+                                <td>11.3s</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- modal para resultados. 
+        - Lo abro desde app.js
+        - le aplico animate.css para animar la apertura del modal con animate__zoomIn
+    
+    otras animaciones interesantes:
+
+        animate__fadeInDown ----------- deslizar desde arriba
+        animate__bounceIn ---------- rebote al entrar
+        animate__slideInUp ---------- deslizar desde abajo
+    
+        -->
+    <div class="modal fade" id="modalResultadis">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable animate__animated animate__zoomIn">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header bg-primary text-white">
+                    <h4 class="modal-title text-center fs-2">Jornada 8</h4>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body aqui meto los resultados-->
+                <div class="modal-body">
+                    <h5 class="text-center text-primary">Fútbol-sala</h5>
+                    <table class="table">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Equipo</th>
+                                <th>Resultado</th>
+                                <th>Equipo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Los Rayo F.C (ESO 1ºC)</td>
+                                <td>3 - 0</td>
+                                <td>Infatigables (2º Bachillerato)</td>
+                            </tr>
+
+                            <tr>
+                                <td>Sin tregua F.C ( FP redes)</td>
+                                <td></td>
+                                <td>Descansa esta jornada</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h5 class="text-center text-primary ">Baloncesto</h5>
+                    <table class="table">
+
+                        <thead class="table-success">
+                            <tr>
+                                <th>Equipo</th>
+                                <th>Resultado</th>
+                                <th>Equipo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>A tope Siempre (ESO 3B)</td>
+                                <td> 58 - 46</td>
+                                <td>Los máquinas (FP Desarrollo web)</td>
+                            </tr>
+
+                            <tr>
+                                <td>Los que faltaban(Bachillerato 1ºA)</td>
+                                <td> </td>
+                                <td>Descansa</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h5></h5>
+                    <h5 class="text-center text-primary">Voleybol</h5>
+
+                    <table class="table">
+                        <thead class="table-info">
+                            <tr>
+                                <th>Equipo</th>
+                                <th>Resultado</th>
+                                <th>Equipo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Los pringels (FP administración)</td>
+                                <td>12 - 10</td>
+                                <td>Los chunguitos (fp automoción)</td>
+                            </tr>
+
+                            <tr>
+                                <td>Mejor callados (ESO 4A)</td>
+                                <td></td>
+                                <td>Descansa</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h5></h5>
+                    <h5 class="text-center text-primary">Atletismo</h5>
+                    <table class="table">
+                        <thead class="table-danger">
+                            <tr>
+                                <th>Atleta</th>
+                                <th>Resultado</th>
+                                <th>Atleta</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Jesús Bernabé Imedio</td>
+                                <td>Victoria - Derrota</td>
+                                <td>Sonia Martinez</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- modal para JUGADORES
+     
+     
+        - cada jugador estará dentro de un CARD
+        - 4 cards por fila en escritorio, 2 en tablets y 1 en móviles
+        - lo hago en HTML, luego lo haremos con angular
+    -->
+    <!-- Modal fullscreen para que se abra toda la pantalla -->
+    <div class="modal fade" id="modalJugadores" tabindex="-1" aria-labelledby="jugadoresLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+
+
+                <div class="modal-header bg-light text-danger">
+                    <h4 class="modal-title" id="jugadoresLabel">Jugadores inscritos</h4>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Cerrar"></button>
+                </div>
+
+
+                <div class="modal-body">
+                    <div class="container">
+                        <!-- Tabla de jugadores -->
+                        <table class="table">
+                            <thead class="table-danger">
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Apellidos</th>
+                                    <th>Competición</th>
+                                    <th>Ficha</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Jose Luis</td>
+                                    <td>Sanchez</td>
+                                    <td>Fútbol Sala</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm" data-bs-toggle="collapse"
+                                            data-bs-target="#infoJugador1">
+                                             mostrar/ocultar
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Pablo</td>
+                                    <td>Martínez</td>
+                                    <td>Atletismo</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm" data-bs-toggle="collapse"
+                                            data-bs-target="#infoJugador2">
+                                             mostrar/ocultar
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Jose Carlos</td>
+                                    <td>Peco</td>
+                                    <td>Baloncesto</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm" data-bs-toggle="collapse"
+                                            data-bs-target="#infoJugador3">
+                                             mostrar/ocultar
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Marta</td>
+                                    <td>Cuenca</td>
+                                    <td>Voleybol</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm" data-bs-toggle="collapse"
+                                            data-bs-target="#infoJugador4">
+                                            mostrar/ocultar
+                                        </button>
+                                    </td>
+                                </tr>
+
+                            
+                            </tbody>
+                        </table>
+
+                        <!-- Cards estarán ocultos con collapse, mediante data-bs-toggle el botón ver mas lo abre -->
+
+                      
+
+                        <!-- card bootstrap-->
+                        <div id="infoJugador1" class="card mb-3 collapse mt-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="./imagenes/fotoCard/cardImagen1.png" class="img-fluid rounded-start"
+                                        alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Jose Luis Sanchez</h5>
+                                        <p class="card-text">Competición: Fútbol Sala</p>
+                                        <p class="card-text">Posición: Delantero</p>
+                                        <p class="card-text">Equipo: Los Rayo F.C</p>
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                                ago</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- card bootstrap-->
+                        <div id="infoJugador2" class="card mb-3 collapse mt-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="./imagenes/fotoCard/cardImagen2.jpg" class="img-fluid rounded-start"
+                                        alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                          <h5 class="card-title">Pablo Martínez</h5>
+                                    <p class="card-text">Competición: Atletismo</p>
+                                    <p class="card-text">Especialidad: 100m lisos</p>
+                                    <p class="card-text">Club: Atletas CR</p>
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                                ago</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                         <!-- card bootstrap-->
+                        <div id="infoJugador3" class="card mb-3 collapse mt-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="./imagenes/fotoCard/cardImagen3.jpg" class="img-fluid rounded-start"
+                                        alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                          <h5 class="card-title">Jose Carlos Peco</h5>
+                                    <p class="card-text">Competición: Baloncesto</p>
+                                    <p class="card-text">Especialidad: pivot</p>
+                                    <p class="card-text">A tope Siempre (ESO 3B)</p>
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                                ago</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- card bootstrap-->
+                        <div id="infoJugador4" class="collapse mt-3 card mb-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="./imagenes/fotoCard/cardImagen4.png" class="img-fluid rounded-start"
+                                        alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                          <h5 class="card-title">Marta Cuenca</h5>
+                                    <p class="card-text">Competición: Voleybol</p>
+                                    <p class="card-text">Especialidad: saque</p>
+                                    <p class="card-text">Los pringels (FP administración)</p>
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                                ago</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                       
+
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- ********************************** Sección Principal (section.hero) ******************************
+        ************************************************************************************************
+        
+        
+        - con un eslogan de la liga y botón de acceso rápido.
+
+        - Botón de Acción (button)
+            - Un botón destacado con una acción (ej. "Leer más", "Ver productos", "Registrarse").
+            - * Solo debemos mostrar el botón pero no debe hacer ninguna acción.
+    -->
+    <section class="hero bg-light text-start py-1 mb-2">
+
+        <div class="container hero-container">
+
+            <h3 class="display-4">¡Compite y aprende.!</h3>
+            <p class="lead">Sigue todas las competiciones de la liga deportiva de nuestro instituto.</p>
+            <!-- alinear botona  la derecha. Lo puedo hacer con gri en una fila y 2 columnas para texto y boton-->
+            <!--  Button to Open the Modal bootstrap -->
+
+            <div class="d-flex justify-content-end">
+                <button type="button" class="botones btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#myModalInscripcion">
+                    Inscríbete ya
+                </button>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- The Modal para la inscripcion. 
+     En este caso se abre desde el boton sin necesidad de código js 
+     Uso animacion fadeInDown-->
+
+    <div class="modal fade " id="myModalInscripcion">
+        <div class="modal-dialog animate__animated animate__fadeInDown">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title text-primary">Modal con formulario de inscripción.</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body aqui meto el formulario de inscripción -->
+                <div class="modal-body">
+                    <form id="formularioInscripcion" class="bg-light p-3 rounded">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label text-bg-danger">Nombre del equipo</label>
+                            <input type="text" class="form-control" id="nombreEquipo" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="curso" class="form-label text-bg-danger">Curso al que pertenecen los
+                                alumnos</label>
+                            <input type="text" class="form-control" id="curso" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label text-bg-danger">Correo electrónico de contacto</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="modalidad" class="form-label text-bg-danger">Modalidad</label>
+                            <select class="form-select" id="modalidad" required>
+                                <option value="">Selecciona modalidad</option>
+                                <option value="futbol-sala">Fútbol-sala</option>
+                                <option value="baloncesto">Baloncesto</option>
+                                <option value="voleibol">Voleibol</option>
+                                <option value="atletismo">Atletismo</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="jugadores" class="form-label text-bg-danger">Jugadores</label>
+                            <textarea class="form-control" id="jugadores" rows="10"
+                                placeholder="Escribe los nombres de los jugadores con sus dos apellidos"
+                                required></textarea>
+                        </div>
+
+
+                    </form>
+                </div>
+
+                <!-- Modal footer. El submit para enviar el formulario se pondrá aqui al estar el form dentro de un submit
+                        indicando al formulario que se hace referencia -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" form="formularioInscripcion" class="btn btn-primary">
+                        Enviar
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- toast de confirmación de envio correcto de formulario
+        - es necesario validación en js con envio-->
+    <div id="toastConfirmacionFormulario"
+        class="toast position-fixed top-50 start-50 translate-middle p-3 text-bg-success" role="alert"
+        aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+
+            <strong class="me-auto">Formulario</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Su inscripción se ha realizado correctamente.
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- *********************************************seccion NOTICIAS ****************************************************
+            ***************************************************************************************************************-->
+
+    <h2 class="m-3 texto-titulos">Noticias recientes</h2>
+    <p id="contadorDiapositivas" class="text-center fw-bold contador-carousel"></p>
+
+
+    <div id="carouselExampleDark" class="carousel carousel-dark slide carousel-fade">
+
+
+
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+                <img src="imagenes/logo/voleybol-red.avif" class="d-block w-100" data-bs-toggle="modal"
+                    data-bs-target="#modalVoleybol" alt="noticias voleybol">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3 class="text-end text-danger">Voleybol</h3>
+                    <p class="fs-3 text-end">Cambio en normativa.</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="imagenes/logo/atletismoNoticia.jpg" class="d-block w-100 " data-bs-toggle="modal"
+                    data-bs-target="#modalAtletismo" alt="noticias atletismo">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3 class="text-start text-danger">Atletismo</h3>
+                    <p class="fs-3 text-start text-white">Cambio de última hora en las carrera del viernes.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="imagenes/logo/vista-frontal-hombre-jugando-baloncesto-solo.jpg" class="d-block w-100"
+                    alt="noticias baloncesto" data-bs-toggle="modal" data-bs-target="#modalBaloncesto">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3 class="text-start text-danger">Baloncesto</h3>
+                    <p class="fs-3 text-start text-white">Los chicos de ESO se imponen a los de FP consolidando la
+                        primera posición.
+                    </p>
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Modales para la seccion NOTICIAS. Se abrirán sin JS-->
+
+    <!-- Modal Voleybol -->
+    <div class="modal fade" id="modalVoleybol" tabindex="-1" aria-labelledby="modalVoleybolLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- meto imagen en cabecera-->
+                <div class="modal-header p-0">
+                    <img src="imagenes/logo/voleybol-red.avif" class="imagenesModalNoticiaCarrusel"
+                        alt="Noticia voleybol">
+                    <button type="button" class="btn-close position-absolute top-0 end-0 m-2" data-bs-dismiss="modal"
+                        aria-label="Cerrar"></button>
+                </div>
+
+                <!-- Contenido -->
+                <div class="modal-body">
+                    <h5 class="modal-title mb-3" id="modalVoleybolLabel">Noticia de Voleybol</h5>
+                    <p class="texto-parrafos">Importante novedad en la normativa de la competición. <br><br>
+                        Se aprueba el enfrentamiento a un sólo partido en campo neutral ebtre los equipos que resulten
+                        de ganar la liga
+                        de nuestro instituto y el ganador de la liga que se esta desarrollando en el IES Santa Maria de
+                        Alarcos.<br><br>
+                        Seguimos apostando por el voley.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Atletismo -->
+    <div class="modal fade" id="modalAtletismo" tabindex="-1" aria-labelledby="modalAtletismoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Cabecera con imagen -->
+                <div class="modal-header p-0">
+                    <img src="imagenes/logo/atletismoNoticia.jpg" class="imagenesModalNoticiaCarrusel"
+                        alt="Noticia atletismo">
+                    <button type="button" class="btn-close position-absolute top-0 end-0 m-2" data-bs-dismiss="modal"
+                        aria-label="Cerrar"></button>
+                </div>
+
+                <!-- Contenido -->
+                <div class="modal-body">
+                    <h5 class="modal-title mb-3" id="modalAtletismoLabel">Noticia de Atletismo</h5>
+                    <p class="texto-parrafos">Cambios de última hora en las carrera del
+                        viernes.<br><br>
+                        A causa de las previsiones de lluvia para el próximo viernes y con el fin de que la carrera se
+                        celebré en las mejores condiciones posiible,
+                        la organización ha decidido retrasar la misma a la tarde.<br><br>
+                        El horario será a las 18:00 y enfrentará a Sonia Martinez y Jose Manuel Carpintero en una
+                        carrera que promete ser emocionante.<br><br>
+                        No te lo pierdas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Baloncesto -->
+    <div class="modal fade" id="modalBaloncesto" tabindex="-1" aria-labelledby="modalBaloncestoLabel"
+        aria-hidden="true">
+        <!-- modaal-sm es pequeño-->
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Cabecera con imagen -->
+                <div class="modal-header p-0">
+                    <img src="imagenes/logo/vista-frontal-hombre-jugando-baloncesto-solo.jpg"
+                        class="imagenesModalNoticiaCarrusel" alt="Noticia baloncesto">
+                    <button type="button" class="btn-close position-absolute top-0 end-0 m-2" data-bs-dismiss="modal"
+                        aria-label="Cerrar"></button>
+                </div>
+
+                <!-- Contenido -->
+                <div class="modal-body">
+                    <h5 class="modal-title mb-3" id="modalBaloncestoLabel">Noticia de Baloncesto</h5>
+                    <p class="texto-parrafos"> El equipo "A tope Siempre" sigue líder invicto tras imponerse a "Los
+                        máquinas" en un partido muy reñido que empezarón controlando los chicos de formación profesional
+                        pero que finalmente fué arrasado por los de ESO.
+                        <br><br>La próxima cita será el martes que viene en horario habitual.
+                        <br><br> No te pierdas nada.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Sección Resumen (section.features)
+
+        Además, se incluirá una sección con un resumen de las competiciones existentes, así como
+        información importante para usuarios de cara a las inscripciones o al seguimiento de la propia
+        liga.
+
+   
+    -->
+    <!-- Sección Resumen (section.features)-->
+
+    <section class="features py-5 bg-light mt-4">
+        <h3 class="m-3 texto-titulos text-center">Resumen</h3>
+        <div class="container ">
+            <div class="row">
+                <!-- icono competiciones-->
+                <div class="col-md-4 text-center">
+                    <i class="bi bi-send iconos-resumen">
+                        <h3>Competiciones</h3>
+                        <p class="fs-5 ">Por el momento puedes competir en baloncesto, futbol sala, voleybol o
+                            atletismo.</p>
+                    </i>
+                </div>
+
+                <!-- icono inscripción-->
+                <div class="col-md-4 text-center">
+                    <i class="bi bi-wallet-fill iconos-resumen">
+                        <h3>Inscripción</h3>
+                        <p class="fs-5">En secretaria de 10 a 12 de la mañana. Imprescindible que todos los miembros del
+                            equipo sean estudiantes del instituto.</p>
+                    </i>
+
+                </div>
+
+                <!-- icono seguimiento-->
+                <div class="col-md-4 text-center">
+                    <i class="bi bi-arrow-down-up iconos-resumen">
+                        <h3>No te pierdas nada</h3>
+                        <p class="fs-5">Todos los lunes actualizamos la información de las ligas.</p>
+                    </i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Tarjetas para las Competiciones(section.cards)
+        - Al menos dos tarjetas con un título, una imagen y una breve descripción.
+        -requisito enunciado:
+
+            º En móviles → 1 card por fila.
+            o En tablets → 2 cards por fila.
+            o En escritorio → 4 cards por fila.
+        Por ello en vez de usar card-group usare sistema de GRID y las clases de columnas adaptativas siendo estas
+            
+        <div class="col-12 col-md-6 col-lg-3">
+        col-12 (móviles), col-md-6 (tablets) y col-lg-3 (escritorio).
+        implica que en móviles 12/12=1 card por fila, en tablets 12/6=2 cards por fila y en escritorio 12/3=4 cards por fila.
+            resolucion:
+            - h-100 (altura completa del contenedor padre, ajusta al 100% para que todas las card ocupen el mismo espacio)
+            - row g-4 (fila con espacio entre columnas y filas)
+        -->
+
+    <section id="seccionCompeticiones" class="container mx-auto my-auto py-4">
+        <h3 class="m-3 texto-titulos text-end">Nuestros campeonatos</h3>
+        <div class="row g-4 g-md-auto g-lg-1  ">
+
+
+            <!-- tarjeta-->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100">
+                    <img src="imagenes/logo/futbolsala.jpg" class="card-img-top" class="img-fluid"
+                        alt="futbol sala imagen">
+                    <div class="card-body">
+                        <h5 class="card-title">Futbol-sala</h5>
+                        <p class="card-text">Mínimo 5 participantes por equipo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- tarjeta-->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100">
+                    <img src="imagenes/logo/vista-frontal-hombre-jugando-baloncesto-solo.jpg" class="card-img-top"
+                        class="img-fluid" alt="hombre baloncesto">
+                    <div class="card-body">
+                        <h5 class="card-title">Baloncesto</h5>
+                        <p class="card-text">Deporte que nos gusta cada vez mas. Mínimo 5 jugadores por equipo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- tarjeta-->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100">
+                    <img src="imagenes/logo/voleybol-red.avif" class="card-img-top" class="img-fluid"
+                        alt="voleibol imagen">
+                    <div class="card-body">
+                        <h5 class="card-title">Voleybol</h5>
+                        <p class="card-text">Competición de 6 jugadores</p>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- tarjeta-->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100">
+                    <img src="imagenes/logo/atletismoNoticia.jpg" class="card-img-top" class="img-fluid"
+                        alt="atletismo imagen">
+                    <div class="card-body">
+                        <h5 class="card-title">Atletismo</h5>
+                        <p class="card-text">En carreras individuales de 50 metros</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Pie de Página (footer)
+
+        - Dirección de correo.
+        - Íconos de redes sociales.
+        - Textos legales obligatorios en cualquier web.
+    -->
+    <footer class="mt-4">
+
+        <div id="container-footer" class="container pt-4">
+            <div class="row align-items-sm-start">
+
+
+                <div class="col">
+                    <h4 class="text-uppercase">Accesos directos</h4>
+
+
+
+                    <button type="button" class="nav-link active fs-5" data-bs-toggle="modal"
+                        data-bs-target="#modalResultadis" aria-current="page">
+                        Resultados
+                    </button>
+
+                    <button type="button" class="nav-link active fs-5" onclick="location.href='#seccionCompeticiones'"
+                        aria-current="page">
+                        Competiciones
+                    </button>
+
+
+
+                    <button type="button" class="nav-link active fs-5" data-bs-toggle="modal"
+                        data-bs-target="#myModalInscripcion" aria-current="page">
+                        Inscripción
+                    </button>
+
+                    <button type="button" class="nav-link active fs-5" data-bs-toggle="modal"
+                        data-bs-target="#modalJugadores" aria-current="page">
+                        Jugadores
+                    </button>
+
+
+
+
+                </div>
+
+                <div class="col">
+                    <h4 class="text-uppercase">Contacto</h4>
+
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-geo-alt-fill iconos-footer-contacto"></i>
+                        <p class="fs-5">Paseo de la Universidad, 1 13005 Ciudad Real (Spain) Mapa</p>
+                    </div>
+
+
+
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-telephone iconos-footer-contacto"></i>
+                        <p class="fs-5">926232530</p>
+                    </div>
+
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-envelope-paper-fill iconos-footer-contacto">
+
+                        </i>
+                        <p class="fs-5">13001327.ies@educastillalamancha.es</p>
+                    </div>
+                </div>
+
+
+                <div class="col text-end">
+                    <h4 class="text-uppercase">En la red</h4>
+
+                    <div class="iconos-redesSociales-footer">
+                        <a href="#"><img src="imagenes/logo/logo_facebook.png" alt="Facebook" width="40"
+                                height="40"></a>
+                        <a href="#"><img src="imagenes/logo/logo_instagram.png" alt="Instagram" width="40"
+                                height="40"></a>
+                        <a href="#"><img src="imagenes/logo/logo_youtube.png" alt="YouTube" width="40" height="40"></a>
+                        <a href="#"><img src="imagenes/logo/logo_tiktok.png" alt="TikTok" width="40" height="40"></a>
+                        <a href="#"><img src="imagenes/logo/logo_whatsapp.png" alt="WhatsApp" width="40"
+                                height="40"></a>
+                    </div>
+
+
+                </div>
+
+
+
+
+                <div class="row">
+                    <!-- derechos-->
+                    <p class="font-weight-bold text-center">
+                        Copyright
+                        © 2025
+                        Liga Deportiva del Instituto - Jesús Bernabé Imedio Perea -
+                        Reservados todos los derechos. </p>
+                </div>
+
+            </div>
+        </div>
+
+    </footer>
+
+
+
+
+
+
+
+
+    <!-- bootstrap JS-->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- script propios-->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
