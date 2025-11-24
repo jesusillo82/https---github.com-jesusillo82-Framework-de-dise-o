@@ -32,7 +32,7 @@ Modal de reserva/inscripción:
   o Al cerrarlo (hidden.bs.modal), resetear el formulario.
 
 */
-const modalInscripcion = document.getElementById('myModalInscripcion');
+const modalInscripcion = document.getElementById('modalInscripcion');
 const formulario = document.getElementById('formularioInscripcion');
 const nombreEquipo = document.getElementById('nombreEquipo');
 
@@ -56,7 +56,7 @@ document.getElementById('formularioInscripcion').addEventListener('submit', func
   // Validar el formulario por defecto
   if (this.checkValidity()) {
     // cierro modal
-    const modal = bootstrap.Modal.getInstance(document.getElementById('myModalInscripcion'));
+    const modal = bootstrap.Modal.getInstance(document.getElementById('modalInscripcion'));
     modal.hide();
 
     // muestro toast de confirmación

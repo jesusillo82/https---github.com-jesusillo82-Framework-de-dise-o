@@ -100,10 +100,25 @@
                                 Equipos
                             </a>
                             <ul class="dropdown-menu texto-enlaces-navbar">
-                                <li><a class="dropdown-item" href="#"> A tope Siempre (ESO 3B)</a></li>
+                                <li>Futbol-sala</li>
+                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#modalLosRayo">Los Rayo F.C (ESO 1ºC)</a></li>
+                                <li><a class="dropdown-item" href="#">Infatigables (2º Bachillerato)</a></li>
+                                <li><a class="dropdown-item" href="#">Sin tregua F.C ( FP redes)</a></li>
+                                <li>Baloncesto</li>
+                                <li><a class="dropdown-item" href="#">A tope Siempre (ESO 3B)</a></li>
                                 <li><a class="dropdown-item" href="#">Los máquinas (FP Desarrollo web)</a></li>
-                                <li><a class="dropdown-item" href="#"> Los que faltaban(Bachillerato 1ºA)</a></li>
+                                <li><a class="dropdown-item" href="#">Los que faltaban(Bachillerato 1ºA)</a></li>
+                                <li>Voleybol</li>
+                                <li><a class="dropdown-item" href="#">Los pringels (FP administración)</a></li>
+                                <li><a class="dropdown-item" href="#">Los chunguitos (fp automoción)</a></li>
+                                <li><a class="dropdown-item" href="#">Mejor callados (ESO 4A)</a></li>
+                                <li>Atletismo</li>
+                                <li><a class="dropdown-item" href="#">Jesús Bernabé Imedio</a></li>
+                                <li><a class="dropdown-item" href="#">Sonia Martinez</a></li>
+                                <li><a class="dropdown-item" href="#">Jose Manuel Carpintero</a></li>
                             </ul>
+
                         </li>
 
                         <!-- Resultados Cuando uso href con un a si abro desde JS debo hacer un preventDefault para que no recargue la pagina-->
@@ -121,17 +136,20 @@
                         </li>
                         <!-- Jugadores-->
                         <li class="nav-item">
-                            <a class="nav-link active texto-enlaces-navbar" aria-current="page" href="#">Jugadores
+                            <a class="nav-link active texto-enlaces-navbar" aria-current="page" href="#"
+                                data-bs-toggle="modal" data-bs-target="#modalJugadores">Jugadores
                             </a>
                         </li>
                         <!-- Árbitros-->
                         <li class="nav-item">
-                            <a class="nav-link active texto-enlaces-navbar" aria-current="page" href="#">Árbitros
+                            <a class="nav-link active texto-enlaces-navbar" aria-current="page" href="#"
+                                data-bs-toggle="modal" data-bs-target="#modalArbitros">Árbitros
                             </a>
                         </li>
                         <!-- Contacto-->
                         <li class="nav-item">
-                            <a class="nav-link active texto-enlaces-navbar" aria-current="page" href="#">Contacto
+                            <a class="nav-link active texto-enlaces-navbar" aria-current="page" href="#"
+                                data-bs-toggle="modal" data-bs-target="#modalContacto">Contacto
                             </a>
                         </li>
 
@@ -418,11 +436,120 @@
     </div>
 
 
+
+
+    <!-- modal de los EQUIPOS con card de JUGADORES mediante sistema GRID responsible-->
+
+    <!-- Equipo Los Rayo-->
+
+    <div class="modal fade" id="modalLosRayo" tabindex="-1" aria-labelledby="modalEquipo1Label" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+
+                <!-- Encabezado -->
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="modalEquipo1Label">Jugadores - Los Rayo F.C (ESO 1ºC)</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Cerrar"></button>
+                </div>
+
+                <!-- Cuerpo -->
+                <div class="modal-body">
+                    <div class="row g-4">
+
+                        <!-- Card jugador -->
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="card h-100">
+                                <img src="./imagenes/fotoCard/cardImagen1.png" class="card-img-top" alt="Jugador 1">
+                                <div class="card-body">
+                                    <h6 class="card-title">Jose Luis Sánchez</h6>
+                                    <p class="card-text">Competición: Fútbol Sala</p>
+                                    <p class="card-text">Posición: Delantero</p>
+                                    <p class="card-text">Equipo: Los Rayo F.C</p>
+                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                            ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card jugador -->
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="card h-100">
+                                <img src="./imagenes/fotoCard/cardImagen2.jpg" class="card-img-top" alt="Jugador 2">
+                                <div class="card-body">
+                                    <h6 class="card-title">Alberto Saavedra</h6>
+                                    <p class="card-text">Competición: Fútbol Sala</p>
+                                    <p class="card-text">Posición: Portero</p>
+                                    <p class="card-text">Equipo: Los Rayo F.C</p>
+                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                            ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card jugador -->
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="card h-100">
+                                <img src="./imagenes/fotoCard/cardImagen3.jpg" class="card-img-top" alt="Jugador 2">
+                                <div class="card-body">
+                                    <h6 class="card-title">Manu Pelaez </h6>
+                                    <p class="card-text">Competición: Fútbol Sala</p>
+                                    <p class="card-text">Posición: Defensa</p>
+                                    <p class="card-text">Equipo: Los Rayo F.C</p>
+                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                            ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card jugador -->
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="card h-100">
+                                <img src="./imagenes/fotoCard/cardImagen1.png" class="card-img-top" alt="Jugador 2">
+                                <div class="card-body">
+                                    <h6 class="card-title">Luis López </h6>
+                                    <p class="card-text">Competición: Fútbol Sala</p>
+                                    <p class="card-text">Posición: Defensa</p>
+                                    <p class="card-text">Equipo: Los Rayo F.C</p>
+                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                            ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card jugador -->
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="card h-100">
+                                <img src="./imagenes/fotoCard/cardImagen2.jpg" class="card-img-top" alt="Jugador 2">
+                                <div class="card-body">
+                                    <h6 class="card-title">Pablo Buitrago</h6>
+                                    <p class="card-text">Competición: Fútbol Sala</p>
+                                    <p class="card-text">Posición: Delantero</p>
+                                    <p class="card-text">Equipo: Los Rayo F.C</p>
+                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                            ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- Pie -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
     <!-- modal para JUGADORES
      
      
         - cada jugador estará dentro de un CARD
-        - 4 cards por fila en escritorio, 2 en tablets y 1 en móviles
         - lo hago en HTML, luego lo haremos con angular
     -->
     <!-- Modal fullscreen para que se abra toda la pantalla -->
@@ -458,18 +585,18 @@
                                     <td>
                                         <button class="btn btn-primary btn-sm" data-bs-toggle="collapse"
                                             data-bs-target="#infoJugador1">
-                                             mostrar/ocultar
+                                            mostrar/ocultar
                                         </button>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Pablo</td>
-                                    <td>Martínez</td>
+                                    <td>Jesús Bernabé</td>
+                                    <td>Imedio</td>
                                     <td>Atletismo</td>
                                     <td>
                                         <button class="btn btn-primary btn-sm" data-bs-toggle="collapse"
                                             data-bs-target="#infoJugador2">
-                                             mostrar/ocultar
+                                            mostrar/ocultar
                                         </button>
                                     </td>
                                 </tr>
@@ -481,7 +608,7 @@
                                     <td>
                                         <button class="btn btn-primary btn-sm" data-bs-toggle="collapse"
                                             data-bs-target="#infoJugador3">
-                                             mostrar/ocultar
+                                            mostrar/ocultar
                                         </button>
                                     </td>
                                 </tr>
@@ -498,13 +625,13 @@
                                     </td>
                                 </tr>
 
-                            
+
                             </tbody>
                         </table>
 
                         <!-- Cards estarán ocultos con collapse, mediante data-bs-toggle el botón ver mas lo abre -->
 
-                      
+
 
                         <!-- card bootstrap-->
                         <div id="infoJugador1" class="card mb-3 collapse mt-3" style="max-width: 540px;">
@@ -519,7 +646,8 @@
                                         <p class="card-text">Competición: Fútbol Sala</p>
                                         <p class="card-text">Posición: Delantero</p>
                                         <p class="card-text">Equipo: Los Rayo F.C</p>
-                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 3
+                                                mins
                                                 ago</small></p>
                                     </div>
                                 </div>
@@ -535,18 +663,18 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                          <h5 class="card-title">Pablo Martínez</h5>
-                                    <p class="card-text">Competición: Atletismo</p>
-                                    <p class="card-text">Especialidad: 100m lisos</p>
-                                    <p class="card-text">Club: Atletas CR</p>
-                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                        <h5 class="card-title">Jesús Bernabé Imedio</h5>
+                                        <p class="card-text">Competición: Atletismo</p>
+                                        <p class="card-text">Especialidad: 100m lisos</p>
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 3
+                                                mins
                                                 ago</small></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                         <!-- card bootstrap-->
+                        <!-- card bootstrap-->
                         <div id="infoJugador3" class="card mb-3 collapse mt-3" style="max-width: 540px;">
                             <div class="row g-0">
                                 <div class="col-md-4">
@@ -555,11 +683,12 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                          <h5 class="card-title">Jose Carlos Peco</h5>
-                                    <p class="card-text">Competición: Baloncesto</p>
-                                    <p class="card-text">Especialidad: pivot</p>
-                                    <p class="card-text">A tope Siempre (ESO 3B)</p>
-                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                        <h5 class="card-title">Jose Carlos Peco</h5>
+                                        <p class="card-text">Competición: Baloncesto</p>
+                                        <p class="card-text">Especialidad: pivot</p>
+                                        <p class="card-text">Equipo:A tope Siempre (ESO 3B)</p>
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 3
+                                                mins
                                                 ago</small></p>
                                     </div>
                                 </div>
@@ -575,11 +704,12 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                          <h5 class="card-title">Marta Cuenca</h5>
-                                    <p class="card-text">Competición: Voleybol</p>
-                                    <p class="card-text">Especialidad: saque</p>
-                                    <p class="card-text">Los pringels (FP administración)</p>
-                                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                        <h5 class="card-title">Marta Cuenca</h5>
+                                        <p class="card-text">Competición: Voleybol</p>
+                                        <p class="card-text">Especialidad: saque</p>
+                                        <p class="card-text">Equipo:Los pringels (FP administración)</p>
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 3
+                                                mins
                                                 ago</small></p>
                                     </div>
                                 </div>
@@ -588,7 +718,7 @@
 
 
 
-                       
+
 
                     </div>
                 </div>
@@ -601,6 +731,327 @@
             </div>
         </div>
     </div>
+
+
+    <!-- modal para ÁRBITROS
+     
+     
+        - cada árbitro tendrá un CARD con su ficha
+        - lo hago en HTML, luego lo haremos con angular
+    -->
+    <!-- Modal fullscreen para que se abra toda la pantalla -->
+    <div class="modal fade" id="modalArbitros" tabindex="-1" aria-labelledby="jugadoresLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+
+
+                <div class="modal-header bg-light text-danger">
+                    <h4 class="modal-title" id="jugadoresLabel">Árbitros </h4>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Cerrar"></button>
+                </div>
+
+
+                <div class="modal-body">
+                    <div class="container">
+                        <!-- Tabla de jugadores -->
+                        <table class="table">
+                            <thead class="table-danger">
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Apellidos</th>
+                                    <th>Competición</th>
+                                    <th>Ficha</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Manuel</td>
+                                    <td>Ariza</td>
+                                    <td>Fútbol Sala</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm" data-bs-toggle="collapse"
+                                            data-bs-target="#infoJugador1">
+                                            mostrar/ocultar
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Miguel</td>
+                                    <td>Lopez</td>
+                                    <td>Atletismo</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm" data-bs-toggle="collapse"
+                                            data-bs-target="#infoJugador2">
+                                            mostrar/ocultar
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Marcos</td>
+                                    <td>Perea</td>
+                                    <td>Baloncesto</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm" data-bs-toggle="collapse"
+                                            data-bs-target="#infoJugador3">
+                                            mostrar/ocultar
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Lucia</td>
+                                    <td>Aranda</td>
+                                    <td>Voleybol</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm" data-bs-toggle="collapse"
+                                            data-bs-target="#infoJugador4">
+                                            mostrar/ocultar
+                                        </button>
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+
+                        <!-- Cards estarán ocultos con collapse, mediante data-bs-toggle el botón ver mas lo abre -->
+
+
+
+                        <!-- card bootstrap-->
+                        <div id="infoJugador1" class="card mb-3 collapse mt-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="./imagenes/fotoCard/cardImagen1.png" class="img-fluid rounded-start"
+                                        alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Manuel Ariza</h5>
+                                        <p class="card-text">Competición: Fútbol Sala</p>
+                                        <p class="card-text">Partidos arbitrados: <br>
+                                            Los Rayo F.C 3 - 0 Infatigables <br>
+                                            Sin tregua F.C 2 - 0 Los Rayo F.C
+                                        </p>
+
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 3
+                                                mins
+                                                ago</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- card bootstrap-->
+                        <div id="infoJugador2" class="card mb-3 collapse mt-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="./imagenes/fotoCard/cardImagen2.jpg" class="img-fluid rounded-start"
+                                        alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Miguel López</h5>
+                                        <p class="card-text">Competición: Atletismo</p>
+                                        <p class="card-text">Carreras arbitradas: <br>
+                                            Jesús Bernabé Imedio Victoria - Derrota Sonia Martinez
+
+                                        </p>
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 3
+                                                mins
+                                                ago</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- card bootstrap-->
+                        <div id="infoJugador3" class="card mb-3 collapse mt-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="./imagenes/fotoCard/cardImagen3.jpg" class="img-fluid rounded-start"
+                                        alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Marcos Perea</h5>
+                                        <p class="card-text">Competición: Baloncesto</p>
+                                        <p class="card-text">Partidos arbitrados: <br>
+                                            A tope Siempre 58 - 46 Los Máquinas<br>
+                                            Los Máquinas 60 - 56 A tope Siempre
+                                        </p>
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 3
+                                                mins
+                                                ago</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- card bootstrap-->
+                        <div id="infoJugador4" class="collapse mt-3 card mb-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="./imagenes/fotoCard/cardImagen4.png" class="img-fluid rounded-start"
+                                        alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Lucia Aranda</h5>
+                                        <p class="card-text">Competición: Voleybol</p>
+                                        <p class="card-text">Partidos arbitrados: <br>
+                                            Los pringels 12 - 10 Los chunguitos<br>
+                                            Mejor callados 14 - 13 Los pringels
+                                        </p>
+                                        <p class="card-text"><small class="text-body-secondary">Last updated 3
+                                                mins
+                                                ago</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- modal para CONTACTO-->
+    <div class="modal fade" id="modalContacto" tabindex="-1" aria-labelledby="contactoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Encabezado -->
+                <div class="modal-header bg-light">
+                    <h3 class="modal-title text-end text-danger">ADMINISTRACIÓN DE LA LIGA</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+
+                <!-- Cuerpo -->
+                <div class="modal-body">
+
+                    <!-- Preguntas Frecuentes -->
+                    <h4 class="bg-light mb-4">Preguntas Frecuentes</h4>
+
+                    <!-- pregunta -->
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq1">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse1">
+                                    Tengo dudas sobre la inscripción y no encuentro información en la página
+                                    web.
+                                </button>
+                            </h2>
+                            <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body texto-parrafos-faq">
+                                    Rellena el formulario disponible al final de la página para contactar
+                                    directamente
+                                    con el administrador.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- pregunta -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse2">
+                                    ¿Cúal es el plazo para recibir respuesta del administrador?
+                                </button>
+                            </h2>
+                            <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body texto-parrafos-faq">
+                                    Máximo de 7 dias laborables desde que se recibe el email.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- pregunta -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse3">
+                                    ¿Puedo inscribirme sin ser estudiante del instituto?
+                                </button>
+                            </h2>
+                            <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body texto-parrafos-faq">
+                                    Depende de la competición en la que quieras participar. No esta permitido en
+                                    la
+                                    modalidad de atletismo.
+                                    Para otras modalidades consulta la página principal por competición.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- pregunta -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse4">
+                                    ¿Es gratuita la inscripción?
+                                </button>
+                            </h2>
+                            <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body texto-parrafos-faq">
+                                    Lo es para todos los alumnos que estan matriculados en el instituto. Si no
+                                    estas matriculado es coste es de 5 euros por persona.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <hr>
+
+                    <!-- Formulario de contacto -->
+                    <h4 class="bg-light m-4">Formulario de contacto</h4>
+                    <form class="bg-light" action="mailto:admin@ligaIESmaestreDeCalatrava.com" method="post"
+                        enctype="text/plain">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label ">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Apellidos</label>
+                            <input type="text" class="form-control" id="apellidos" name="apellidos" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success">Enviar</button>
+                    </form>
+
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 
 
 
@@ -621,14 +1072,14 @@
         <div class="container hero-container">
 
             <h3 class="display-4">¡Compite y aprende.!</h3>
-            <p class="lead">Sigue todas las competiciones de la liga deportiva de nuestro instituto.</p>
+            <p class="lead">Anímate y participa en las ligas deportivas de nuestro instituto.</p>
             <!-- alinear botona  la derecha. Lo puedo hacer con gri en una fila y 2 columnas para texto y boton-->
             <!--  Button to Open the Modal bootstrap -->
 
             <div class="d-flex justify-content-end">
                 <button type="button" class="botones btn btn-primary" data-bs-toggle="modal"
-                    data-bs-target="#myModalInscripcion">
-                    Inscríbete ya
+                    data-bs-target="#modalInscripcion">
+                    Apuntate ya.
                 </button>
             </div>
 
@@ -640,13 +1091,13 @@
      En este caso se abre desde el boton sin necesidad de código js 
      Uso animacion fadeInDown-->
 
-    <div class="modal fade " id="myModalInscripcion">
+    <div class="modal fade " id="modalInscripcion">
         <div class="modal-dialog animate__animated animate__fadeInDown">
             <div class="modal-content">
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title text-primary">Modal con formulario de inscripción.</h4>
+                    <h4 class="modal-title text-primary">Formulario de inscripción.</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
 
@@ -663,7 +1114,8 @@
                             <input type="text" class="form-control" id="curso" required>
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label text-bg-danger">Correo electrónico de contacto</label>
+                            <label for="email" class="form-label text-bg-danger">Correo electrónico de
+                                contacto</label>
                             <input type="email" class="form-control" id="email" required>
                         </div>
                         <div class="mb-3">
@@ -747,7 +1199,7 @@
                     data-bs-target="#modalVoleybol" alt="noticias voleybol">
                 <div class="carousel-caption d-none d-md-block">
                     <h3 class="text-end text-danger">Voleybol</h3>
-                    <p class="fs-3 text-end">Cambio en normativa.</p>
+                    <p class="fs-3 text-end">Importante cambio en la normativa.</p>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="2000">
@@ -764,7 +1216,8 @@
                     alt="noticias baloncesto" data-bs-toggle="modal" data-bs-target="#modalBaloncesto">
                 <div class="carousel-caption d-none d-md-block">
                     <h3 class="text-start text-danger">Baloncesto</h3>
-                    <p class="fs-3 text-start text-white">Los chicos de ESO se imponen a los de FP consolidando la
+                    <p class="fs-3 text-start text-white">Los chicos de ESO se imponen a los de FP consolidando
+                        la
                         primera posición.
                     </p>
 
@@ -804,11 +1257,17 @@
                 <div class="modal-body">
                     <h5 class="modal-title mb-3" id="modalVoleybolLabel">Noticia de Voleybol</h5>
                     <p class="texto-parrafos">Importante novedad en la normativa de la competición. <br><br>
-                        Se aprueba el enfrentamiento a un sólo partido en campo neutral ebtre los equipos que resulten
+                        Se aprueba el enfrentamiento a un sólo partido en campo neutral ebtre los equipos que
+                        resulten
                         de ganar la liga
-                        de nuestro instituto y el ganador de la liga que se esta desarrollando en el IES Santa Maria de
+                        de nuestro instituto y el ganador de la liga que se esta desarrollando en el IES Santa
+                        Maria de
                         Alarcos.<br><br>
                         Seguimos apostando por el voley.</p>
+                </div>
+                <!-- Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>
@@ -832,12 +1291,18 @@
                     <h5 class="modal-title mb-3" id="modalAtletismoLabel">Noticia de Atletismo</h5>
                     <p class="texto-parrafos">Cambios de última hora en las carrera del
                         viernes.<br><br>
-                        A causa de las previsiones de lluvia para el próximo viernes y con el fin de que la carrera se
+                        A causa de las previsiones de lluvia para el próximo viernes y con el fin de que la
+                        carrera se
                         celebré en las mejores condiciones posiible,
                         la organización ha decidido retrasar la misma a la tarde.<br><br>
-                        El horario será a las 18:00 y enfrentará a Sonia Martinez y Jose Manuel Carpintero en una
+                        El horario será a las 18:00 y enfrentará a Sonia Martinez y Jose Manuel Carpintero en
+                        una
                         carrera que promete ser emocionante.<br><br>
                         No te lo pierdas.</p>
+                </div>
+                <!-- Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>
@@ -861,12 +1326,18 @@
                 <!-- Contenido -->
                 <div class="modal-body">
                     <h5 class="modal-title mb-3" id="modalBaloncestoLabel">Noticia de Baloncesto</h5>
-                    <p class="texto-parrafos"> El equipo "A tope Siempre" sigue líder invicto tras imponerse a "Los
-                        máquinas" en un partido muy reñido que empezarón controlando los chicos de formación profesional
+                    <p class="texto-parrafos"> El equipo "A tope Siempre" sigue líder invicto tras imponerse a
+                        "Los
+                        máquinas" en un partido muy reñido que empezarón controlando los chicos de formación
+                        profesional
                         pero que finalmente fué arrasado por los de ESO.
                         <br><br>La próxima cita será el martes que viene en horario habitual.
                         <br><br> No te pierdas nada.
                     </p>
+                </div>
+                <!-- Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>
@@ -903,7 +1374,8 @@
                 <div class="col-md-4 text-center">
                     <i class="bi bi-wallet-fill iconos-resumen">
                         <h3>Inscripción</h3>
-                        <p class="fs-5">En secretaria de 10 a 12 de la mañana. Imprescindible que todos los miembros del
+                        <p class="fs-5">En secretaria de 10 a 12 de la mañana. Imprescindible que todos los
+                            miembros del
                             equipo sean estudiantes del instituto.</p>
                     </i>
 
@@ -944,36 +1416,67 @@
 
             <!-- tarjeta-->
             <div class="col-12 col-md-6 col-lg-3">
-                <div class="card h-100">
+                <div class="card h-100 texto-parrafos">
                     <img src="imagenes/logo/futbolsala.jpg" class="card-img-top" class="img-fluid"
                         alt="futbol sala imagen">
-                    <div class="card-body">
+                    <div class="card-body ">
                         <h5 class="card-title">Futbol-sala</h5>
-                        <p class="card-text">Mínimo 5 participantes por equipo.</p>
+                        <p class="card-text ">
+                        <ul class="list-group ">
+                            <li class="list-group-item">Mínimo 5 participantes por equipo</li>
+                            <li class="list-group-item">Partidos miercoles o jueves por la tarde.</li>
+                            <li class="list-group-item">Se admite un jugador que no sea del instituto.</li>
+                            <li class="list-group-item">Competición con un mínimo de 3 equipos y un máximo de
+                                10.</li>
+                            <li class="list-group-item">Trofeo para el ganador.</li>
+                        </ul>
+
+                        </p>
                     </div>
                 </div>
             </div>
 
             <!-- tarjeta-->
             <div class="col-12 col-md-6 col-lg-3">
-                <div class="card h-100">
+                <div class="card h-100 texto-parrafos">
                     <img src="imagenes/logo/vista-frontal-hombre-jugando-baloncesto-solo.jpg" class="card-img-top"
                         class="img-fluid" alt="hombre baloncesto">
                     <div class="card-body">
                         <h5 class="card-title">Baloncesto</h5>
-                        <p class="card-text">Deporte que nos gusta cada vez mas. Mínimo 5 jugadores por equipo.</p>
+                        <p class="card-text">
+                        <ul class="list-group">
+                            <li class="list-group-item">Mínimo 5 participantes por equipo</li>
+                            <li class="list-group-item">Partidos lunes y miiercoles por la tarde.</li>
+                            <li class="list-group-item">Se admite un jugador que no sea del instituto.</li>
+                            <li class="list-group-item">Competición con un mínimo de 3 equipos y un máximo de
+                                10.</li>
+                            <li class="list-group-item">Trofeo para el ganador.</li>
+                        </ul>
+                        </p>
                     </div>
                 </div>
             </div>
 
             <!-- tarjeta-->
             <div class="col-12 col-md-6 col-lg-3">
-                <div class="card h-100">
+                <div class="card h-100 texto-parrafos">
                     <img src="imagenes/logo/voleybol-red.avif" class="card-img-top" class="img-fluid"
                         alt="voleibol imagen">
                     <div class="card-body">
                         <h5 class="card-title">Voleybol</h5>
-                        <p class="card-text">Competición de 6 jugadores</p>
+                        <p class="card-text">
+
+                        <ul class="list-group">
+                            <li class="list-group-item">Mínimo 6 participantes por equipo</li>
+                            <li class="list-group-item">Partidos martes y miercoles por la tarde.</li>
+                            <li class="list-group-item">Se admiten hasta 2 jugadores que no sea del instituto.
+                            </li>
+                            <li class="list-group-item">Competición con un mínimo de 3 equipos y un máximo de 6.
+                            </li>
+                            <li class="list-group-item">Medallas para los ganadores.</li>
+                        </ul>
+
+                        </p>
 
                     </div>
                 </div>
@@ -981,12 +1484,24 @@
 
             <!-- tarjeta-->
             <div class="col-12 col-md-6 col-lg-3">
-                <div class="card h-100">
+                <div class="card h-100 texto-parrafos">
                     <img src="imagenes/logo/atletismoNoticia.jpg" class="card-img-top" class="img-fluid"
                         alt="atletismo imagen">
                     <div class="card-body">
                         <h5 class="card-title">Atletismo</h5>
-                        <p class="card-text">En carreras individuales de 50 metros</p>
+                        <p class="card-text">
+                        <ul class="list-group">
+                            <li class="list-group-item">Mínimo 3 participantes para que se desarrolle la
+                                competición.
+                            </li>
+                            <li class="list-group-item">Carreras por la tarde, a definir.</li>
+                            <li class="list-group-item">Todos los participantes deben ser estudiantes del
+                                instituto.
+                            </li>
+                            <li class="list-group-item">Máximo 10 participantes.</li>
+                            <li class="list-group-item">Trofeos para los dos primeros clasificados.</li>
+                        </ul>
+                        </p>
 
                     </div>
                 </div>
@@ -1042,7 +1557,7 @@
 
                 </div>
 
-                <div class="col">
+                <div id="footerContacto" class="col">
                     <h4 class="text-uppercase">Contacto</h4>
 
                     <div class="d-flex align-items-center mb-3">
