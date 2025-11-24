@@ -277,6 +277,7 @@ footer a {
    
   }
 
+  /* iconos horizontal */
   .iconos-redesSociales-footer{
     flex-direction: row;/* alineados en horizontal*/
     justify-content: center;
@@ -284,14 +285,27 @@ footer a {
     gap: 1rem;
   }
 
+  /*/* separo div Contacto perteneciente al Footer*/
   #footerContacto{
     margin-top: 2rem;
 
   }
 
+  /* separo div Redes Sociales del footer y alineo texto a izquierda*/
   #icoRedesSociales h4{
     text-align: left;
     margin-top: 2rem;
     
   }
+
+ 
+
+  /* color azul y enlaces blancos*/
+  .navBarMenu {
+    background-color: var(--color-secundario); 
+  }
+  .navBarMenu .nav-link {
+    color: var(--color-principal) !important;
+  }
+  
 }
