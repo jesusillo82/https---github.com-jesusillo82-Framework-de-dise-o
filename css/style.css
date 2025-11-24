@@ -300,12 +300,5 @@ footer a {
 
  
 
-  /* color azul y enlaces blancos*/
-  .navBarMenu {
-    background-color: var(--color-secundario); 
-  }
-  .navBarMenu .nav-link {
-    color: var(--color-principal) !important;
-  }
   
 }
