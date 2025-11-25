@@ -26,15 +26,18 @@ body {
 
 /*-------------- sección hero --------------------*/
 .hero-container {
-  background: linear-gradient(to bottom, var(--color-secundario), #1E4E7A);/* degradado azul*/
+  background: linear-gradient(to bottom, var(--color-secundario), #1E4E7A);
+  /* degradado azul*/
   color: var(--color-principal);
   /* texto blanco*/
-  padding: 2rem;/* espacio interno*/
-  border-radius: 10% 10% 70% 10%;/* bordes redondeados arriba*/
+  padding: 2rem;
+  /* espacio interno*/
+  border-radius: 10% 10% 70% 10%;
+  /* bordes redondeados arriba*/
 }
 
 /* eslogan*/
-.hero-container h3{
+.hero-container h3 {
   font-size: 3rem;
   text-shadow: 2px 2px 3px var(--color-terciario);
   font-weight: bold;
@@ -42,21 +45,24 @@ body {
 }
 
 /* ---------- botones y hover animados --------*/
-.botones{
+.botones {
   text-align: center;
   font-size: 1.2rem;
   padding: 0.8rem;
   text-decoration: none;
   background-color: var(--color-terciario);
   border-radius: 20% 20% 10% 10%;
-  color: var(--color-principal);  
+  color: var(--color-principal);
 }
 
 /* aplico sombra y escala según requisitos*/
 .botones:hover {
-  transform: scale(1.2);/* efecto zoom al pasar el raton*/
-  box-shadow: 2px 2px 10px var(--color-principal);/* sombra al pasar el raton*/
-  transition: transform 0.4s;/* duracion de la transicion*/
+  transform: scale(1.2);
+  /* efecto zoom al pasar el raton*/
+  box-shadow: 2px 2px 10px var(--color-principal);
+  /* sombra al pasar el raton*/
+  transition: transform 0.4s;
+  /* duracion de la transicion*/
 }
 
 
@@ -84,28 +90,34 @@ body {
 
 /* contador del carrusel*/
 .contador-carousel {
-  
+
   background: linear-gradient(var(--color-terciario));
- 
+
   color: #fff;
   padding: 2;
   border-radius: 1rem;
-  
+
 
 }
 
 /* imagen modal noticia carrusel*/
-.imagenesModalNoticiaCarrusel{
-  width: 100%; /* ancho completo del contenedor*/
-  height: 200px;/* altura fija */
-  object-fit: cover; /* para que la imagen no se deforme. Recorta proporcionalmente */
+.imagenesModalNoticiaCarrusel {
+  width: 100%;
+  /* ancho completo del contenedor*/
+  height: 200px;
+  /* altura fija */
+  object-fit: cover;
+  /* para que la imagen no se deforme. Recorta proporcionalmente */
 }
 
 /* efecto hover carrusel*/
 .carousel-item:hover {
-  cursor: pointer;/* cambia el cursor al pasar por la imagen*/
-  transform: scale(1.02); /* efecto zoom ligero */
-  filter: brightness(1.1); /* aclara la imagen */
+  cursor: pointer;
+  /* cambia el cursor al pasar por la imagen*/
+  transform: scale(1.02);
+  /* efecto zoom ligero */
+  filter: brightness(1.1);
+  /* aclara la imagen */
 }
 
 
@@ -129,15 +141,18 @@ section #seccion-resumen {
   margin: 1rem;
   /*height: 100%;/* todas las cards misma altura Lo uso directamente con bootstrap mediente  <div class="card h-100">*/
 }
+
 .card img {
   height: 200px;
-  object-fit: cover; /* para que la imagen no se deforme. Recorta proporcionalmente */
+  object-fit: cover;
+  /* para que la imagen no se deforme. Recorta proporcionalmente */
 }
+
 .card h5 {
   color: var(--color-terciario);
-  font-size:  1.5rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /* de momento no lo uso. Si en próximas tareas se hace clickeable la card activaré este hover
@@ -183,7 +198,7 @@ footer a {
 .texto-titulos {
   color: var(--color-terciario);
   text-decoration: solid;
- 
+
   text-transform: uppercase;
   font-size: 2rem;
   margin-top: 1rem;
@@ -194,15 +209,16 @@ footer a {
 .texto-parrafos {
 
   color: var(--color-secundario);
-  font-family: Georgia, 'Times New Roman', Times, serif;/* tipografia para redacción*/
- 
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  /* tipografia para redacción*/
+
 }
 
 .texto-parrafos-faq {
   color: var(--color-terciario);
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 1rem;
- 
+
 }
 
 
@@ -248,11 +264,13 @@ footer a {
   color: var(--color-principal);
 }
 
-.iconos-redesSociales-footer{
+.iconos-redesSociales-footer {
   display: flex;
-  flex-direction: column;/* alineados en vertical*/
+  flex-direction: column;
+  /* alineados en vertical*/
   gap: 0.5rem;
 }
+
 
 
 
@@ -262,43 +280,59 @@ footer a {
 
 /* ---------- carrusel de noticias --------------------*/
 
+
+/* para moviles grandes y tabletas*/
+
 @media (max-width: 768px) {
   #carouselExampleDark .carousel-item img {
     height: 40vh;
-    /* para moviles grandes y tabletas*/
+  
   }
+
+ 
+
 }
 
- /*moviles pequeños*/
+/*moviles pequeños*/
 @media (max-width: 576px) {
 
+  /* ajustes del carrusel de noticias*/
   #carouselExampleDarkcarouselExampleDark .carousel-item img {
     height: 30vh;
-   
+
   }
 
+  
+
+
   /* iconos horizontal */
-  .iconos-redesSociales-footer{
-    flex-direction: row;/* alineados en horizontal*/
+  .iconos-redesSociales-footer {
+    flex-direction: row;
+    /* alineados en horizontal*/
     justify-content: center;
-    flex-wrap: wrap;/* si no caben en una fila, que pasen a la siguiente. Por defecto es non wrap*/
+    flex-wrap: wrap;
+    /* si no caben en una fila, que pasen a la siguiente. Por defecto es non wrap*/
     gap: 1rem;
   }
 
   /*/* separo div Contacto perteneciente al Footer*/
-  #footerContacto{
+  #footerContacto {
     margin-top: 2rem;
 
   }
 
   /* separo div Redes Sociales del footer y alineo texto a izquierda*/
-  #icoRedesSociales h4{
+  #icoRedesSociales h4 {
     text-align: left;
     margin-top: 2rem;
-    
+
   }
 
-  #copyright{
-     margin-top: 2rem;
+  #copyright {
+    margin-top: 2rem;
   }
+
+
 }
+
+
