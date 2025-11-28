@@ -222,6 +222,8 @@ footer a {
 }
 
 
+
+
 /* estilos enlaces navbar*/
 
 .navBarMenu {
@@ -269,6 +271,19 @@ footer a {
   flex-direction: column;
   /* alineados en vertical*/
   gap: 0.5rem;
+}
+
+
+/* imágen para el modal EQUIPO*/
+.w-65 {
+  
+  width: 65%;
+  
+}
+.w-75 {
+  
+  width: 75%;
+  
 }
 
 
