@@ -137,7 +137,7 @@ De todas formas, podéis hacer uso del foro para compartir cualquier duda sobre 
 const modalJugadores = document.getElementById('modalJugadores');
 
 //obtengo contenido del modal
-const  contenidoModalJugadores = modalJugadores.querySelector('.modal-content');
+const contenidoModalJugadores = modalJugadores.querySelector('.modal-content');
 
 //obtengo cabecera del modal
 const cabeceraModalJugadores = modalJugadores.querySelector('.modal-header');
@@ -149,17 +149,143 @@ const h4ModalJugadores = cabeceraModalJugadores.querySelector('h4');
 // capturo evento
 modalJugadores.addEventListener('shown.bs.modal', () => {
 
-// estilo contenido
-contenidoModalJugadores.style.backgroundColor='#b1d4f9ff';
+  // estilo contenido
+  contenidoModalJugadores.style.backgroundColor = '#b1d4f9ff';
 
-// estilo cabecera
-cabeceraModalJugadores.style.backgroundColor='#f8d0d0ff';
+  // estilo cabecera
+  cabeceraModalJugadores.style.backgroundColor = '#f8d0d0ff';
 
-// estilo h4
-h4ModalJugadores.style.color='#5f6a7aff';
-h4ModalJugadores.style.fontWeight='bold';
+  // estilo h4
+  h4ModalJugadores.style.color = '#5f6a7aff';
+  h4ModalJugadores.style.fontWeight = 'bold';
 
 });
 
 
-// color azul claro para jugadores
+/* ------------------ filtrados equipos, resultados y clasificaciones -----------------
+---------------------------------------------------------------------------------------*/
+
+
+
+/*filtro de RESULTADOS por competición seleccionada en el select
+
+  - por defecto muestra los resultados de fútbol-sala porque en el html
+  no tiene definida la clase d-none <div id="futbolSala" class="competicion">
+
+  - se captura el evento change del select 
+*/
+document.getElementById("selectCompeticionResultados").addEventListener("change", function () {
+  const seleccion = this.value;
+  const bloquesResultados = document.querySelectorAll(".competicion");
+
+  // recorro bloques y muestro/oculto mediante clase de bootstrap d-none
+  bloquesResultados.forEach(divCompeticion => {
+
+
+    if (divCompeticion.id === seleccion) {
+      divCompeticion.classList.remove("d-none");// muestro  b.style.display = "block";
+    } else {
+      divCompeticion.classList.add("d-none");// oculto  b.style.display = "none";
+    }
+  });
+
+});
+
+
+
+/*filtro de las CLASIFICACIONES por competición seleccionada en el select
+
+  - por defecto muestra los resultados de fútbol-sala porque en el html su display es block y para los demas es none
+  <div id="futbolSala" class="competicion" style="display:block;">
+
+*/
+document.getElementById("selectCompeticionClasificacion").addEventListener("change", function () {
+  const seleccion = this.value;// valor seleccionado
+  const bloquesResultados = document.querySelectorAll(".competicion");//
+
+  // recorro bloques y muestro/oculto mediante clase de bootstrap d-none
+  bloquesResultados.forEach(divCompeticion => {
+
+
+    if (divCompeticion.id === seleccion) {
+      divCompeticion.style.display = "block";// muestro  
+    } else {
+      divCompeticion.style.display = "none";// oculto 
+    }
+  });
+
+});
+
+/* filtrado de JUGADORES por NOMBRE y APELLIDO y COMPETICIONES
+
+  - includes() devuelve true si el texto buscado está en la cadena, y false si no lo está.
+  - forEach() ejecuta la función indicada una vez por cada elemento del array.
+  - toLowerCase() convierte una cadena de texto a minúsculas.
+  - querySelectorAll() devuelve todos los elementos del documento que coinciden con un selector CSS.
+
+*/
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  //recojo entradas a buscar
+  const inputNombre = document.getElementById("buscadorNombre");
+  const inputApellido = document.getElementById("buscadorApellido");
+  const selectCompeticion = document.getElementById("buscadorCompeticion");
+  
+  
+  //seleccion todas las filas de la tabla de los jugadores
+  const filas = document.querySelectorAll("tbody tr");
+
+  function filtrarJugadores() {
+    // paso todo a minusculas de esta forma es indiferente escribir Mayúsculas o minúsculas
+    const nombreFiltro = inputNombre.value.toLowerCase();
+    const apellidoFiltro = inputApellido.value.toLowerCase();
+    const competicionFiltro = selectCompeticion.value.toLowerCase();
+
+    filas.forEach(fila => {
+      //de cada una de las filas recojo los 3 campos a comparar
+      const nombre = fila.cells[0].textContent.toLowerCase();
+      const apellido = fila.cells[1].textContent.toLowerCase();
+      const competicion = fila.cells[2].textContent.toLowerCase();
+
+      // compruebo si coinciden los filtros guardando true o false
+      const boolExisteNombre = nombre.includes(nombreFiltro);//
+      const boolExisteApellido = apellido.includes(apellidoFiltro);
+      const boolExisteCompeticion = competicionFiltro === "" || competicion.includes(competicionFiltro);
+
+      // si coinciden los tres valores mostraré la fila
+      if (boolExisteNombre && boolExisteApellido && boolExisteCompeticion) {
+        fila.style.display = "table-row";// muestro
+      } else {
+        fila.style.display = "none";
+      }
+    });
+  }
+
+  // Escuchar cambios en los tres campos
+  inputNombre.addEventListener("keyup", filtrarJugadores);// keyup nos permite realizar filtrado mientras escribimos
+  inputApellido.addEventListener("keyup", filtrarJugadores);
+  selectCompeticion.addEventListener("change", filtrarJugadores);// change nos permite detectar cambio en el select
+});
+
+
+
+
+
+
+/*filtrado de EQUIPOS por competición. 
+  - En este caso lo hago fijo en el enlace equipos para que sea diferente que en los dos anteriores*/
+
+
+
+
+
+
+
+
+
+
+
+
+
