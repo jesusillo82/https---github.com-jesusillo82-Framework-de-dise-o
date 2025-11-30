@@ -326,13 +326,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-
-
 /*filtrado de EQUIPOS por competición. 
   - En este caso lo hago fijo en el enlace equipos para que sea diferente que en los dos anteriores*/
 
 
+  /* ---------------------------Registro en consola de los eventos COLLAPSE de las Cards-------------
+   ----------------------------------------------------------------------------------------------------------
+   
+   - me he ayudado de la IA para hacerlo
+
+
+   
+   - eventos:
+     • show.bs.collapse: se dispara justo antes de que el contenido colapsable se muestre.
+     • shown.bs.collapse: se dispara justo después de que el contenido colapsable se haya mostrado.
+     • hide.bs.collapse: se dispara justo antes de que el contenido colapsable se oculte.
+     • hidden.bs.collapse: se dispara justo después de que el contenido colapsable se haya ocultado.
+
+    - en la consola del navegador se verá el id del collapse que se abre o cierra
+   
+   */
+  // Selecciona todos los elementos con la clase collapse
+document.querySelectorAll('.collapse').forEach(collapseEl => {
+  
+  collapseEl.addEventListener('show.bs.collapse', () => {
+    console.log(`Se va a abrir: ${collapseEl.id}`);
+  });
+
+  collapseEl.addEventListener('shown.bs.collapse', () => {
+    console.log(`Ya se abrió: ${collapseEl.id}`);
+  });
+
+  collapseEl.addEventListener('hide.bs.collapse', () => {
+    console.log(`Se va a cerrar: ${collapseEl.id}`);
+  });
+
+  collapseEl.addEventListener('hidden.bs.collapse', () => {
+    console.log(`Ya se cerró: ${collapseEl.id}`);
+  });
+});
 
 
 
