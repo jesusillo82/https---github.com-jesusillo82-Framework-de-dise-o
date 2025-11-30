@@ -174,21 +174,34 @@ modalJugadores.addEventListener('shown.bs.modal', () => {
 
   - se captura el evento change del select 
 */
-document.getElementById("selectCompeticionResultados").addEventListener("change", function () {
-  const seleccion = this.value;
-  const bloquesResultados = document.querySelectorAll(".competicion");
-
-  // recorro bloques y muestro/oculto mediante clase de bootstrap d-none
-  bloquesResultados.forEach(divCompeticion => {
+document.addEventListener("DOMContentLoaded", function () {
 
 
-    if (divCompeticion.id === seleccion) {
-      divCompeticion.classList.remove("d-none");// muestro  b.style.display = "block";
-    } else {
-      divCompeticion.classList.add("d-none");// oculto  b.style.display = "none";
-    }
+  document.getElementById("selectCompeticionResultados").addEventListener("change", function () {
+    const seleccion = this.value;
+    const bloquesResultados = document.querySelectorAll(".competicion");
+
+    // recorro bloques y muestro/oculto mediante clase de bootstrap d-none
+    bloquesResultados.forEach(divCompeticion => {
+      if (divCompeticion.id === seleccion) {
+        divCompeticion.classList.remove("d-none"); // muestro
+      } else {
+        divCompeticion.classList.add("d-none"); // oculto
+      }
+    });
   });
 
+  // inicializo al cargar la página con el valor por defecto del select
+  const select = document.getElementById("selectCompeticionResultados");
+  const bloquesResultados = document.querySelectorAll(".competicion");
+  // recorro bloques y muestro/oculto mediante clase de bootstrap d-none
+  bloquesResultados.forEach(divCompeticion => {
+    if (divCompeticion.id === select.value) {
+      divCompeticion.classList.remove("d-none");
+    } else {
+      divCompeticion.classList.add("d-none");
+    }
+  });
 });
 
 
@@ -199,11 +212,17 @@ document.getElementById("selectCompeticionResultados").addEventListener("change"
   <div id="futbolSala" class="competicion" style="display:block;">
 
 */
-document.getElementById("selectCompeticionClasificacion").addEventListener("change", function () {
-  const seleccion = this.value;// valor seleccionado
-  const bloquesResultados = document.querySelectorAll(".competicion");//
 
-  // recorro bloques y muestro/oculto mediante clase de bootstrap d-none
+document.addEventListener("DOMContentLoaded", () => {
+
+  const select = document.getElementById("selectCompeticionClasificacion");
+  const bloquesResultados = document.querySelectorAll(".competicion");
+
+  const seleccion = select.value;// valor inicial del select
+
+  /* Inicialización.Añado porque a veces no me mostraba nada
+    recorro bloques y muestro/oculto mediante clase de bootstrap d-none
+  */
   bloquesResultados.forEach(divCompeticion => {
 
 
@@ -214,7 +233,26 @@ document.getElementById("selectCompeticionClasificacion").addEventListener("chan
     }
   });
 
+  //controlo los cambios en la selección LISTENER
+  select.addEventListener("change", function () {
+    const seleccion = this.value;
+    // recorro bloques y muestro/oculto mediante clase de bootstrap d-none
+    bloquesResultados.forEach(divCompeticion => {
+
+      if (divCompeticion.id === seleccion) {
+        divCompeticion.style.display = "block";// muestro  
+      } else {
+        divCompeticion.style.display = "none";// oculto 
+      }
+    });
+  });
+
+
 });
+
+
+
+
 
 /* filtrado de JUGADORES por NOMBRE y APELLIDO y COMPETICIONES
 
@@ -232,8 +270,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const inputNombre = document.getElementById("buscadorNombre");
   const inputApellido = document.getElementById("buscadorApellido");
   const selectCompeticion = document.getElementById("buscadorCompeticion");
-  
-  
+
+
   //seleccion todas las filas de la tabla de los jugadores
   const filas = document.querySelectorAll("tbody tr");
 
@@ -286,8 +324,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const inputNombre = document.getElementById("buscadorNombreArbitro");
   const inputApellido = document.getElementById("buscadorApellidoArbitro");
   const selectCompeticion = document.getElementById("buscadorCompeticionArbitro");
-  
-  
+
+
   //seleccion todas las filas de la tabla de los jugadores
   const filas = document.querySelectorAll("tbody tr");
 
@@ -330,25 +368,25 @@ document.addEventListener("DOMContentLoaded", () => {
   - En este caso lo hago fijo en el enlace equipos para que sea diferente que en los dos anteriores*/
 
 
-  /* ---------------------------Registro en consola de los eventos COLLAPSE de las Cards-------------
-   ----------------------------------------------------------------------------------------------------------
-   
-   - me he ayudado de la IA para hacerlo
+/* ---------------------------Registro en consola de los eventos COLLAPSE de las Cards-------------
+ ----------------------------------------------------------------------------------------------------------
+ 
+ - me he ayudado de la IA para hacerlo
 
 
-   
-   - eventos:
-     • show.bs.collapse: se dispara justo antes de que el contenido colapsable se muestre.
-     • shown.bs.collapse: se dispara justo después de que el contenido colapsable se haya mostrado.
-     • hide.bs.collapse: se dispara justo antes de que el contenido colapsable se oculte.
-     • hidden.bs.collapse: se dispara justo después de que el contenido colapsable se haya ocultado.
+ 
+ - eventos:
+   • show.bs.collapse: se dispara justo antes de que el contenido colapsable se muestre.
+   • shown.bs.collapse: se dispara justo después de que el contenido colapsable se haya mostrado.
+   • hide.bs.collapse: se dispara justo antes de que el contenido colapsable se oculte.
+   • hidden.bs.collapse: se dispara justo después de que el contenido colapsable se haya ocultado.
 
-    - en la consola del navegador se verá el id del collapse que se abre o cierra
-   
-   */
-  // Selecciona todos los elementos con la clase collapse
+  - en la consola del navegador se verá el id del collapse que se abre o cierra
+ 
+ */
+// Selecciona todos los elementos con la clase collapse
 document.querySelectorAll('.collapse').forEach(collapseEl => {
-  
+
   collapseEl.addEventListener('show.bs.collapse', () => {
     console.log(`Se va a abrir: ${collapseEl.id}`);
   });
