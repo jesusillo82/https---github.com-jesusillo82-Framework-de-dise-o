@@ -1072,10 +1072,23 @@
                     <!-- filtrado por nombre, apellido y comepticion-->
                     <div class="row mb-3">
                         <div class="col">
-                            <input type="text" id="buscadorNombre" class="form-control"
+
+                            <!-- responsive con HTML-->
+
+                            <!-- version para móvil. pantallas xs-->
+                            <input type="text" id="buscadorNombre" class="form-control d-block d-sm-none"
+                                placeholder="Nombre">
+                            <!-- versión tablet o móviles grandes. Pantallas sm hasta md. -->
+                            <input type="text" id="buscadorNombre" class="form-control d-none d-sm-block d-md-none"
+                                placeholder="Buscar nombre">
+
+                            <!-- versión . Pantallas md en adelante -->
+                            <input type="text" id="buscadorNombre" class="form-control d-none d-md-block"
                                 placeholder="Buscar por nombre...">
+
                         </div>
                         <div class="col">
+                            <!-- en este caso cambiera el texto del placeholder según tamaño ventana desde JS-->
                             <input type="text" id="buscadorApellido" class="form-control"
                                 placeholder="Buscar por apellido...">
                         </div>
@@ -1471,8 +1484,8 @@
 
                 <div class="modal-body">
 
-<!-- filtrado por nombre, apellido y comepticion-->
-                    
+                    <!-- filtrado por nombre, apellido y comepticion-->
+
 
                     <div class="row mb-3">
                         <div class="col">
@@ -2316,7 +2329,7 @@
                 <div id="footerContacto" class="col">
                     <h4 class="text-uppercase">Contacto</h4>
 
-                    
+
 
                     <div class="d-flex align-items-center mb-3">
                         <i class="bi bi-geo-alt-fill iconos-footer-contacto"></i>

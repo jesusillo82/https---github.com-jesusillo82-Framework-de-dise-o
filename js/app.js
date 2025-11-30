@@ -405,6 +405,41 @@ document.querySelectorAll('.collapse').forEach(collapseEl => {
 });
 
 
+/*-------------------- ajuste de texto según tamaño de pantalla --------- 
+
+  - Cuando visualizao en móvil el placeholder del input del buscador de apellidos de jugadores es muy largo y no se ve completo.
+
+  - cambiaré el texto del placeholder según pantalla
+  - Parece un media query, el problema es que no puedo cambiar contenido html desde css
+  - innerWidth devuelve el ancho interior de la ventana en píxeles.
+  - resize se dispara cuando se cambia el tamaño de la ventana del navegador.
+*/
+document.addEventListener("DOMContentLoaded", () => {
+  const inputApellido = document.getElementById("buscadorApellido");
+
+  function actualizarPlaceholder() {
+    const ancho = window.innerWidth;
+
+    if (ancho < 576) {
+      // móviles pequeños (xs)
+      inputApellido.placeholder = "Apellido";
+    } else if (ancho >= 576 && ancho < 992) {
+      // tablets (sm y md)
+      inputApellido.placeholder = "Buscar Apellido...";
+    } else {
+      // escritorio (lg en adelante)
+      inputApellido.placeholder = "Buscar por Apellido...";
+    }
+  }
+
+  // inicializo al cargar
+  actualizarPlaceholder();
+
+  // actualizo al redimensionar
+  window.addEventListener("resize", actualizarPlaceholder);
+});
+
+
 
 
 
