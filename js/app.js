@@ -250,7 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const competicion = fila.cells[2].textContent.toLowerCase();
 
       // compruebo si coinciden los filtros guardando true o false
-      const boolExisteNombre = nombre.includes(nombreFiltro);//
+      const boolExisteNombre = nombre.includes(nombreFiltro);// uso includes para que busque en cualquier parte del nombre la letra que metamos
       const boolExisteApellido = apellido.includes(apellidoFiltro);
       const boolExisteCompeticion = competicionFiltro === "" || competicion.includes(competicionFiltro);
 
@@ -267,6 +267,61 @@ document.addEventListener("DOMContentLoaded", () => {
   inputNombre.addEventListener("keyup", filtrarJugadores);// keyup nos permite realizar filtrado mientras escribimos
   inputApellido.addEventListener("keyup", filtrarJugadores);
   selectCompeticion.addEventListener("change", filtrarJugadores);// change nos permite detectar cambio en el select
+});
+
+
+/* filtrado de ÁRBITROS por NOMBRE y APELLIDO y COMPETICIONES
+
+  - Uso startsWith() en vez de includes para que devuelve true si la cadena comienza con los caracteres de la cadena especificada, de lo contrario devuelve false. De esta forma según voy añadiendo letras va descartando arbitros
+  - forEach() ejecuta la función indicada una vez por cada elemento del array.
+  - toLowerCase() convierte una cadena de texto a minúsculas.
+  - querySelectorAll() devuelve todos los elementos del documento que coinciden con un selector CSS.
+
+*/
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  //recojo entradas a buscar
+  const inputNombre = document.getElementById("buscadorNombreArbitro");
+  const inputApellido = document.getElementById("buscadorApellidoArbitro");
+  const selectCompeticion = document.getElementById("buscadorCompeticionArbitro");
+  
+  
+  //seleccion todas las filas de la tabla de los jugadores
+  const filas = document.querySelectorAll("tbody tr");
+
+  function filtrarArbitros() {
+    // paso todo a minusculas de esta forma es indiferente escribir Mayúsculas o minúsculas
+    const nombreFiltro = inputNombre.value.toLowerCase();
+    const apellidoFiltro = inputApellido.value.toLowerCase();
+    const competicionFiltro = selectCompeticion.value.toLowerCase();
+
+    filas.forEach(fila => {
+      //de cada una de las filas recojo los 3 campos a comparar
+      const nombre = fila.cells[0].textContent.toLowerCase();
+      const apellido = fila.cells[1].textContent.toLowerCase();
+      const competicion = fila.cells[2].textContent.toLowerCase();
+
+      // compruebo si coinciden los filtros guardando true o false
+      const boolExisteNombre = nombre.startsWith(nombreFiltro);//
+      const boolExisteApellido = apellido.startsWith(apellidoFiltro);
+      // si el filtro de competición está vacío o coincide
+      const boolExisteCompeticion = competicionFiltro === "" || competicion.includes(competicionFiltro);
+
+      // si coinciden los tres valores mostraré la fila
+      if (boolExisteNombre && boolExisteApellido && boolExisteCompeticion) {
+        fila.style.display = "table-row";// muestro
+      } else {
+        fila.style.display = "none";
+      }
+    });
+  }
+
+  // Escuchar cambios en los tres campos
+  inputNombre.addEventListener("keyup", filtrarArbitros);// keyup nos permite realizar filtrado mientras escribimos
+  inputApellido.addEventListener("keyup", filtrarArbitros);
+  selectCompeticion.addEventListener("change", filtrarArbitros);// change nos permite detectar cambio en el select
 });
 
 
