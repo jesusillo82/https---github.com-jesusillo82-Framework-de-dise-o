@@ -176,32 +176,32 @@ modalJugadores.addEventListener('shown.bs.modal', () => {
 */
 document.addEventListener("DOMContentLoaded", function () {
 
+  // recojo elementos del modal
+  const modal = document.getElementById("modalResultadis");
+  const select = modal.querySelector("#selectCompeticionResultados");
+  const competiciones = modal.querySelectorAll(".competicion");
 
-  document.getElementById("selectCompeticionResultados").addEventListener("change", function () {
-    const seleccion = this.value;
-    const bloquesResultados = document.querySelectorAll(".competicion");
+  function mostrarResultados() {
+    // Ocultar todas las competiciones dentro del modal
+    competiciones.forEach(div => div.classList.add("d-none"));
 
-    // recorro bloques y muestro/oculto mediante clase de bootstrap d-none
-    bloquesResultados.forEach(divCompeticion => {
-      if (divCompeticion.id === seleccion) {
-        divCompeticion.classList.remove("d-none"); // muestro
-      } else {
-        divCompeticion.classList.add("d-none"); // oculto
-      }
-    });
-  });
+    // Mostrar la seleccionada
+    const seleccion = select.value;
 
-  // inicializo al cargar la página con el valor por defecto del select
-  const select = document.getElementById("selectCompeticionResultados");
-  const bloquesResultados = document.querySelectorAll(".competicion");
-  // recorro bloques y muestro/oculto mediante clase de bootstrap d-none
-  bloquesResultados.forEach(divCompeticion => {
-    if (divCompeticion.id === select.value) {
-      divCompeticion.classList.remove("d-none");
-    } else {
-      divCompeticion.classList.add("d-none");
+    // busco el div correspondiente a la selección
+    const divSeleccionado = modal.querySelector("#" + seleccion);
+
+    // muestro el div seleccionado
+    if (divSeleccionado) {
+      divSeleccionado.classList.remove("d-none");
     }
-  });
+  }
+
+  // Evento al cambiar el select
+  select.addEventListener("change", mostrarResultados);
+
+  // Mostrar la primera opción por defecto al abrir el modal
+  mostrarResultados();
 });
 
 
@@ -213,39 +213,53 @@ document.addEventListener("DOMContentLoaded", function () {
 
 */
 
+
+
 document.addEventListener("DOMContentLoaded", () => {
 
-  const select = document.getElementById("selectCompeticionClasificacion");
-  const bloquesResultados = document.querySelectorAll(".competicion");
+  const bloques = document.getElementById("modalClasificaciones"); // contenedor de los bloques de competiciones del modal clasificaciones
 
-  const seleccion = select.value;// valor inicial del select
+  const select = bloques.querySelector("#selectCompeticionClasificacion");
 
-  /* Inicialización.Añado porque a veces no me mostraba nada
-    recorro bloques y muestro/oculto mediante clase de bootstrap d-none
-  */
-  bloquesResultados.forEach(divCompeticion => {
+  const bloquesResultados = bloques.querySelectorAll(".competicion");
 
+  function mostrarClasificacion() {
 
-    if (divCompeticion.id === seleccion) {
-      divCompeticion.style.display = "block";// muestro  
-    } else {
-      divCompeticion.style.display = "none";// oculto 
-    }
-  });
+ 
 
-  //controlo los cambios en la selección LISTENER
-  select.addEventListener("change", function () {
-    const seleccion = this.value;
-    // recorro bloques y muestro/oculto mediante clase de bootstrap d-none
+    // Ocultar todas las competiciones dentro del modal
+    bloquesResultados.forEach(divCompeticion => {
+      divCompeticion.style.display = "none";
+    });
+
+    // Recorro todos los bloques 
     bloquesResultados.forEach(divCompeticion => {
 
-      if (divCompeticion.id === seleccion) {
-        divCompeticion.style.display = "block";// muestro  
-      } else {
-        divCompeticion.style.display = "none";// oculto 
+      // registro en consola 
+      console.log("divCompeticion:", divCompeticion.id);
+
+
+
+
+      // Mostrar la seleccionada
+      const seleccion = select.value;
+
+      // busco el div correspondiente a la selección
+      const divSeleccionado = bloques.querySelector("#" + seleccion);
+
+      // muestro el div seleccionado
+      if (divSeleccionado) {
+        divSeleccionado.style.display = "block";
       }
+
     });
-  });
+
+  }
+  // Evento al cambiar el select
+  select.addEventListener("change", mostrarClasificacion);
+
+  // Mostrar la primera opción por defecto al abrir el modal
+  mostrarClasificacion();
 
 
 });
