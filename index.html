@@ -26,47 +26,11 @@
 
 <body>
 
-    <!-- Encabezado (header de tipo navbar): 
-
-        - Un título llamativo con el nombre de la web.
-        - Un logo.
-        - Una barra de navegación con al menos tres enlaces (sin funcionalidad).
-
-        nota--- el logo incluye el titulo
     
-        <h1> Tu Arquitectura web</h1>
-    -->
 
     <header>
 
-        <!-- Intro settings -->
-        <style>
-            /* Default height for small devices */
-            #intro-example {
-                height: 40rem;
-            }
-
-            /* Height for devices larger than 992px */
-            @media (min-width: 992px) {
-                #intro-example {
-                    height: 40rem;
-
-                }
-            }
-        </style>
-
-
-        <!--
-        <div class="container row">
-            <div class="col text-center d-flex justify-content-center align-items-center h-100">
-                <a href="index.html"><img id="logoEmpresa" src="imagenes/logoPrueba2.jpg" alt="logo_empresa"
-                        width="300px" height="180px"></a>
-            </div>
-
-        </div>
-    -->
-
-
+    
         <!-- barra de navegacion
 
                 NavbarNavbar responsive con enlaces a las secciones principales: Inicio, Equipos,
@@ -1047,6 +1011,7 @@
      
         - cada jugador estará dentro de un CARD
         - lo hago en HTML, luego lo haremos con angular
+        - aria-label o aria-describedby accesibilidad para lectores de pantalla
     -->
     <!-- Modal fullscreen para que se abra toda la pantalla -->
     <div class="modal fade" id="modalFiltrarJugadores" tabindex="-1" aria-labelledby="jugadoresLabel" aria-hidden="true">
@@ -1069,8 +1034,7 @@
                     <div id="seccionFiltrado" class="row mb-3">
                         <div class="col">
 
-                            <!-- responsive con HTML-->
-
+                 
                             <!-- version para móvil. pantallas xs-->
                             <input type="text" id="buscadorNombre" class="form-control d-block"
                                 placeholder="Nombre">

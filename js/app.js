@@ -309,16 +309,38 @@ document.addEventListener("DOMContentLoaded", () => {
     const apellidoFiltro = inputApellido.value.toLowerCase();
     const competicionFiltro = selectCompeticion.value.toLowerCase();
 
+    console.log("----************** Dentro de la función filtrarJugadores **********-------");
+    console.log("------ valores en input --------------------");
+    console.log("nombreFiltro:", nombreFiltro);
+    console.log("apellidoFiltro:", apellidoFiltro);
+    console.log("competicionFiltro:", competicionFiltro);
+
+
     filas.forEach(fila => {
+      console.log("---- Dentro del forEach ----------------");
+     
+      console.log("######## fila ########");
+      console.log("contenido fila:", fila);
       //de cada una de las filas recojo los 3 campos a comparar
       const nombre = fila.cells[0].textContent.toLowerCase();
+      console.log("nombre:", nombre);
       const apellido = fila.cells[1].textContent.toLowerCase();
+      console.log("apellido:", apellido);
       const competicion = fila.cells[2].textContent.toLowerCase();
+      console.log("competicion:", competicion);
+
+      console.log("################");
 
       // compruebo si coinciden los filtros guardando true o false
-      const boolExisteNombre = nombre.includes(nombreFiltro);// uso includes para que busque en cualquier parte del nombre la letra que metamos
-      const boolExisteApellido = apellido.includes(apellidoFiltro);
+      const boolExisteNombre = nombre.startsWith(nombreFiltro);// Si uso includes busqua en cualquier parte del nombre la letra que metamos. No me interesa porque si escribo "m" me saldría "Marta" y "Jose Manuel". Con startsWith solo me saldría "Marta"
+      const boolExisteApellido = apellido.startsWith(apellidoFiltro);
       const boolExisteCompeticion = competicionFiltro === "" || competicion.includes(competicionFiltro);
+
+      console.log("######## Resultado coincidencia ########");
+      console.log("boolExisteNombre:", boolExisteNombre);
+      console.log("boolExisteApellido:", boolExisteApellido);
+      console.log("boolExisteCompeticion:", boolExisteCompeticion);
+      console.log("################");
 
       // si coinciden los tres valores mostraré la fila
       if (boolExisteNombre && boolExisteApellido && boolExisteCompeticion) {
@@ -327,11 +349,13 @@ document.addEventListener("DOMContentLoaded", () => {
         fila.style.display = "none";
       }
     });
+
+    console.log("----************** FIN función filtrarJugadores FIN**********-------");
   }
 
-  // Escuchar cambios en los tres campos
-  inputNombre.addEventListener("keyup", filtrarJugadores);// keyup nos permite realizar filtrado mientras escribimos
-  inputApellido.addEventListener("keyup", filtrarJugadores);
+  // Escuchar cambios en los tres campos. En vez de keyup como hice en busqueda de arbitros en este caso uso input.Es mas completo.
+  inputNombre.addEventListener("input", filtrarJugadores);// keyup nos permite realizar filtrado mientras escribimos
+  inputApellido.addEventListener("input", filtrarJugadores);
   selectCompeticion.addEventListener("change", filtrarJugadores);// change nos permite detectar cambio en el select
 });
 
