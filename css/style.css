@@ -246,9 +246,11 @@ footer a {
 }
 
 /** efecto hover enlaces navbar*/
-.texto-enlaces-navbar:hover {
+ul.texto-enlaces-navbar li:hover,
+ul.texto-enlaces-navbar li a:hover {
+
   color: var(--color-terciario);
-  /* rojo al pasar el raton*/
+
 }
 
 
@@ -276,14 +278,15 @@ footer a {
 
 /* imágen para el modal EQUIPO*/
 .w-65 {
-  
+
   width: 65%;
-  
+
 }
+
 .w-75 {
-  
+
   width: 75%;
-  
+
 }
 
 
@@ -301,10 +304,10 @@ footer a {
 @media (max-width: 768px) {
   #carouselExampleDark .carousel-item img {
     height: 40vh;
-  
+
   }
 
- 
+
 
 }
 
@@ -317,7 +320,7 @@ footer a {
 
   }
 
-  
+
 
 
   /* iconos horizontal */
@@ -349,5 +352,3 @@ footer a {
 
 
 }
-
-
