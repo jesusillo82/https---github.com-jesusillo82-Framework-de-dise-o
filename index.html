@@ -954,6 +954,7 @@
 
                     <!-- filtrado por nombre, apellido y comepticion-->
                     <div id="seccionFiltrado" class="row mb-3">
+                        <h5 class="text-start">Buscar jugador...</h5>
                         <!-- filtrado por nombre-->
                         <div class="col">
                             <input type="text" id="buscadorNombre" class="form-control d-block" placeholder="Nombre">
@@ -1364,6 +1365,7 @@
                 <div class="modal-body">
 
                     <!-- filtrado por nombre, apellido y comepticion-->
+                    <h5 class="text-start">Buscar árbitro...</h5>
                     <div class="row mb-3">
                         <div class="col">
                             <input type="text" id="buscadorNombreArbitro" class="form-control" placeholder="Nombre...">
@@ -1810,29 +1812,56 @@
             <div class="carousel-item active" data-bs-interval="10000">
                 <img src="imagenes/logo/voleybol-red.avif" class="d-block w-100" data-bs-toggle="modal"
                     data-bs-target="#modalNoticiaVoleybol" alt="noticias voleybol">
+
+
+                <!-- Muestra el div para md en adelante
+
+                    - d-none → oculta el bloque en todos los tamaños por defecto.
+
+                    - -md-block → Muestra div a partir de pantallas ≥768px (md).
+                -->
                 <div class="carousel-caption d-none d-md-block">
                     <h3 class="text-end text-danger">Voleybol</h3>
                     <p class="fs-3 text-end">Importante cambio en la normativa.</p>
                 </div>
+
+                <!-- mostrar solo para movil < 768px-->
+                <div class="carousel-caption d-block d-md-none">
+                    <h3 class="text-end text-danger">Voleybol</h3>
+                    <p class="fs-3 text-end">Importante cambio en la normativa.</p>
+                </div>
+
             </div>
             <!--noticia 2-->
             <div class="carousel-item" data-bs-interval="2000">
                 <img src="imagenes/logo/atletismoNoticia.jpg" class="d-block w-100 " data-bs-toggle="modal"
                     data-bs-target="#modalNoticiaAtletismo" alt="noticias atletismo">
+                <!-- mostrar solo para movil >= 768px-->
                 <div class="carousel-caption d-none d-md-block">
                     <h3 class="text-start text-danger">Atletismo</h3>
                     <p class="fs-3 text-start text-white">Cambio de última hora en las carrera del viernes.</p>
+                </div>
+                <!-- mostrar solo para movil < 768px-->
+                <div class="carousel-caption d-block d-md-none">
+                    <h3 class="text-end text-danger">Atletismo</h3>
+                    <p class="fs-3 text-end">Cambio de última hora.</p>
                 </div>
             </div>
             <!--noticia 3-->
             <div class="carousel-item">
                 <img src="imagenes/logo/vista-frontal-hombre-jugando-baloncesto-solo.jpg" class="d-block w-100"
                     alt="noticias baloncesto" data-bs-toggle="modal" data-bs-target="#modalNoticiaBaloncesto">
+                <!-- mostrar solo para >= 768px-->
                 <div class="carousel-caption d-none d-md-block">
                     <h3 class="text-start text-danger">Baloncesto</h3>
                     <p class="fs-3 text-start text-white">Los chicos de ESO se imponen a los de FP consolidando
                         la primera posición.
                     </p>
+                </div>
+                <!-- mostrar solo para movil < 768px-->
+                <div class="carousel-caption d-block d-md-none">
+                    <h3 class="text-end text-danger">Baloncesto</h3>
+                    <p class="fs-3 text-end">Primera posición.</p>
                 </div>
             </div>
         </div>
@@ -1850,7 +1879,8 @@
     <!-- Modales para la seccion NOTICIAS. Se abrirán sin JS-->
 
     <!-- Modal Voleybol -->
-    <div class="modal fade" id="modalNoticiaVoleybol" tabindex="-1" aria-labelledby="modalVoleybolLabel" aria-hidden="true">
+    <div class="modal fade" id="modalNoticiaVoleybol" tabindex="-1" aria-labelledby="modalVoleybolLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <!-- meto imagen en cabecera-->
@@ -1880,7 +1910,8 @@
     </div>
 
     <!-- Modal Atletismo -->
-    <div class="modal fade" id="modalNoticiaAtletismo" tabindex="-1" aria-labelledby="modalAtletismoLabel" aria-hidden="true">
+    <div class="modal fade" id="modalNoticiaAtletismo" tabindex="-1" aria-labelledby="modalAtletismoLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
 
@@ -2190,9 +2221,10 @@
                 </div>
                 <!-- derechos-->
                 <div id="copyright" class="row">
-                    
+
                     <p class="font-weight-bold text-center">
-                        Copyright© 2025 Liga Deportiva del Instituto - Jesús Bernabé Imedio Perea - Reservados todos los derechos. </p>
+                        Copyright© 2025 Liga Deportiva del Instituto - Jesús Bernabé Imedio Perea - Reservados todos los
+                        derechos. </p>
                 </div>
 
             </div>

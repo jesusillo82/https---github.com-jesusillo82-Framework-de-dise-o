@@ -11,7 +11,7 @@
 
 /* modal de clasificaciones. lo hago directamente con html.*/
 
-/* modal de resultados. lo abro desde app.js */
+/* ******************+ modal de resultados. lo abro desde app.js *******************+*/
 
 // inicializo el modal de resultados
 const modalResultados = new bootstrap.Modal(document.getElementById('modalResultadis'));
@@ -86,6 +86,7 @@ document.getElementById('formularioInscripcion').addEventListener('submit', func
 
 /* contador para el carrusel de noticias */
 document.addEventListener('DOMContentLoaded', function () {
+  // obtengo elementos del DOM
   const carousel = document.getElementById('carouselExampleDark');
   const contador = document.getElementById('contadorDiapositivas');
   const totalDiapositivas = carousel.querySelectorAll('.carousel-item').length;
@@ -106,37 +107,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-/* cambiar componentes modificando estilo
 
-  - color del modal en función de si es voleybol, baloncesto o fútbol-sala
+/* ******************** modificación de ESTILO  en modal de jugadores ***********************+
+*********************************************************************************************/
 
-
-
-
-
-
-
-
-*/
-
-/* modales y filtrar
-
-
-  Hola Manuel. El proyecto puede parecer algo denso a priori, pero hay varias secciones que se hacen con componentes de Bootstrap similares. Por ejemplo, tanto los jugadores como los arbitros pueden hacerse con cards. Los equipos... pues casi que también...
-Además, no hace falta que hagas 200 jugadores... Con tener 3-4 equipos de futbol formados por 5-6 jugadores puede ser suficiente... Se evalúa el uso de los componentes y, lógicamente, si veo que entiendes cómo hacer un "card" , imagino que los 100 siguientes se harán de la misma forma.
-
-Hay algunas elementos como los modales o los filtros que pueden pareces complejos y requerir de JavaScript, pero no hay mucho código detrás.
-Te doy una pista: el truco está en jugar con el display-flex/display-block y el display-none
-Es decir, el HTML del modal no es más que un div (con contenido dentro) cuyo css originalmente tiene un display-none para ocultarlo y no hacerlo visible. Sin embargo, tenemos un botón cuya accion (eventListener) puede desencadenar modificaciones sobre el estilo del modal. Esto es que, la funcion que ejecuta el botón, ponga el modal en display-flex.
-
-A lo largo del tema se irán viendo componentes que requieren de código JavaScript, pero no es un código muy muy complejo, ya que solo son llamadas a funciones a través de escuchadores de eventos (eventListener).
-De todas formas, podéis hacer uso del foro para compartir cualquier duda sobre JavaScript que tengáis.
-
-
-
-*/
-
-/* modificación de estilo en modal de jugadores */
+// obtengo el modal de jugadores
 const modalJugadores = document.getElementById('modalFiltrarJugadores');
 
 //obtengo contenido del modal
@@ -149,15 +124,13 @@ const cabeceraModalJugadores = modalJugadores.querySelector('.modal-header');
 const h4ModalJugadores = cabeceraModalJugadores.querySelector('h4');
 
 
-// capturo evento
+// capturo evento shown.bs.modal que se dispara al mostrarse el modal
 modalJugadores.addEventListener('shown.bs.modal', () => {
 
   // estilo contenido
   contenidoModalJugadores.style.backgroundColor = '#b1d4f9ff';
-
   // estilo cabecera
   cabeceraModalJugadores.style.backgroundColor = '#f8d0d0ff';
-
   // estilo h4
   h4ModalJugadores.style.color = '#5f6a7aff';
   h4ModalJugadores.style.fontWeight = 'bold';
@@ -165,16 +138,21 @@ modalJugadores.addEventListener('shown.bs.modal', () => {
 });
 
 
-/* ------------------ filtrados equipos, resultados y clasificaciones -----------------
----------------------------------------------------------------------------------------*/
+/* *************************** filtrados equipos, resultados y clasificaciones ****************
+**********************************************************************************************-*/
 
 
 
-/*filtro de RESULTADOS por competición seleccionada en el select
+/*-----------------filtro de EQUIPOS
 
+  - implemento directamente en navBar para que sea diferente al de resultado y clasificaiones
+*/
+
+/*---------------filtro de RESULTADOS 
+
+  - por competición seleccionada en el select
   - por defecto muestra los resultados de fútbol-sala porque en el html
-  no tiene definida la clase d-none <div id="futbolSala" class="competicion">
-
+      no tiene definida la clase d-none <div id="futbolSala" class="competicion">
   - se captura el evento change del select 
 */
 document.addEventListener("DOMContentLoaded", function () {
@@ -184,16 +162,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const select = modal.querySelector("#selectCompeticionResultados");
   const competiciones = modal.querySelectorAll(".competicion");
 
+  // función para mostrar los resultados según la competición seleccionada
   function mostrarResultados() {
     // Ocultar todas las competiciones dentro del modal
     competiciones.forEach(div => div.classList.add("d-none"));
-
     // Mostrar la seleccionada
     const seleccion = select.value;
-
     // busco el div correspondiente a la selección
-    const divSeleccionado = modal.querySelector("#" + seleccion);
-
+    const divSeleccionado = modal.querySelector("#" + seleccion)
     // muestro el div seleccionado
     if (divSeleccionado) {
       divSeleccionado.classList.remove("d-none");
@@ -202,33 +178,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Evento al cambiar el select
   select.addEventListener("change", mostrarResultados);
-
   // Mostrar la primera opción por defecto al abrir el modal
   mostrarResultados();
 });
 
 
 
-/*filtro de las CLASIFICACIONES por competición seleccionada en el select
+/*-----------------------filtro de las CLASIFICACIONES 
 
+  - por competición seleccionada en el select
   - por defecto muestra los resultados de fútbol-sala porque en el html su display es block y para los demas es none
   <div id="futbolSala" class="competicion" style="display:block;">
 
 */
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
 
   const bloques = document.getElementById("modalClasificaciones"); // contenedor de los bloques de competiciones del modal clasificaciones
-
   const select = bloques.querySelector("#selectCompeticionClasificacion");
-
   const bloquesResultados = bloques.querySelectorAll(".competicion");
-
+  // función para mostrar los resultados según la competición seleccionada
   function mostrarClasificacion() {
-
- 
 
     // Ocultar todas las competiciones dentro del modal
     bloquesResultados.forEach(divCompeticion => {
@@ -237,16 +207,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Recorro todos los bloques 
     bloquesResultados.forEach(divCompeticion => {
-
       // registro en consola 
       console.log("divCompeticion:", divCompeticion.id);
-
-
-
-
       // Mostrar la seleccionada
       const seleccion = select.value;
-
       // busco el div correspondiente a la selección
       const divSeleccionado = bloques.querySelector("#" + seleccion);
 
@@ -260,18 +224,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   // Evento al cambiar el select
   select.addEventListener("change", mostrarClasificacion);
-
   // Mostrar la primera opción por defecto al abrir el modal
   mostrarClasificacion();
-
 
 });
 
 
+/* *************************** filtrado JUGADORES*******************************************+
+**********************************************************************************************
 
 
-
-/* filtrado de JUGADORES por NOMBRE y APELLIDO y COMPETICIONES
+  filtrado de JUGADORES por NOMBRE y APELLIDO y COMPETICIONES
 
   - includes() devuelve true si el texto buscado está en la cadena, y false si no lo está.
   - forEach() ejecuta la función indicada una vez por cada elemento del array.
@@ -294,15 +257,15 @@ document.addEventListener("DOMContentLoaded", () => {
   //div que contiene la tabla de jugadores y el select de competiciones
   const divJugadoresInscritos = document.getElementById('modalFiltrarJugadores');
 
-  
   //recojo entradas a buscar
   const inputNombre = divJugadoresInscritos.querySelector("#buscadorNombre");
   const inputApellido = divJugadoresInscritos.querySelector("#buscadorApellido");
   const selectCompeticion = divJugadoresInscritos.querySelector('#buscadorCompeticion');
-  
+
   //seleccion todas las filas de la tabla de los jugadores
   const filas = divJugadoresInscritos.querySelectorAll("tbody tr");
 
+  // función de filtrado
   function filtrarJugadores() {
     // paso todo a minusculas de esta forma es indiferente escribir Mayúsculas o minúsculas
     const nombreFiltro = inputNombre.value.toLowerCase();
@@ -314,11 +277,10 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("nombreFiltro:", nombreFiltro);
     console.log("apellidoFiltro:", apellidoFiltro);
     console.log("competicionFiltro:", competicionFiltro);
-
-
+    // recorremos todas las filas
     filas.forEach(fila => {
       console.log("---- Dentro del forEach ----------------");
-     
+
       console.log("######## fila ########");
       console.log("contenido fila:", fila);
       //de cada una de las filas recojo los 3 campos a comparar
@@ -360,7 +322,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-/* filtrado de ÁRBITROS por NOMBRE y APELLIDO y COMPETICIONES
+/*  *************************** filtrado ÁRBITROS*******************************************+
+**********************************************************************************************
+
+
+filtrado de ÁRBITROS por NOMBRE y APELLIDO y COMPETICIONES
 
   - Uso startsWith() en vez de includes para que devuelve true si la cadena comienza con los caracteres de la cadena especificada, de lo contrario devuelve false. De esta forma según voy añadiendo letras va descartando arbitros
   - forEach() ejecuta la función indicada una vez por cada elemento del array.
@@ -416,17 +382,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-/*filtrado de EQUIPOS por competición. 
-  - En este caso lo hago fijo en el enlace equipos para que sea diferente que en los dos anteriores*/
-
-
 /* ---------------------------Registro en consola de los eventos COLLAPSE de las Cards-------------
  ----------------------------------------------------------------------------------------------------------
  
  - me he ayudado de la IA para hacerlo
-
-
- 
  - eventos:
    • show.bs.collapse: se dispara justo antes de que el contenido colapsable se muestre.
    • shown.bs.collapse: se dispara justo después de que el contenido colapsable se haya mostrado.
