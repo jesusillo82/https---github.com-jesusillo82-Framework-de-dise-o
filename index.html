@@ -137,7 +137,7 @@
                         <!-- Jugadores-->
                         <li class="nav-item">
                             <a class="nav-link active texto-enlaces-navbar" aria-current="page" href="#"
-                                data-bs-toggle="modal" data-bs-target="#modalJugadores">Jugadores
+                                data-bs-toggle="modal" data-bs-target="#modalFiltrarJugadores">Jugadores
                             </a>
                         </li>
                         <!-- Árbitros-->
@@ -1049,7 +1049,7 @@
         - lo hago en HTML, luego lo haremos con angular
     -->
     <!-- Modal fullscreen para que se abra toda la pantalla -->
-    <div class="modal fade" id="modalJugadores" tabindex="-1" aria-labelledby="jugadoresLabel" aria-hidden="true">
+    <div class="modal fade" id="modalFiltrarJugadores" tabindex="-1" aria-labelledby="jugadoresLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
 
@@ -1066,31 +1066,25 @@
                 <div class="modal-body">
 
                     <!-- filtrado por nombre, apellido y comepticion-->
-                    <div class="row mb-3">
+                    <div id="seccionFiltrado" class="row mb-3">
                         <div class="col">
 
                             <!-- responsive con HTML-->
 
                             <!-- version para móvil. pantallas xs-->
-                            <input type="text" id="buscadorNombre" class="form-control d-block d-sm-none"
+                            <input type="text" id="buscadorNombre" class="form-control d-block"
                                 placeholder="Nombre">
-                            <!-- versión tablet o móviles grandes. Pantallas sm hasta md. -->
-                            <input type="text" id="buscadorNombre" class="form-control d-none d-sm-block d-md-none"
-                                placeholder="Buscar nombre">
-
-                            <!-- versión . Pantallas md en adelante -->
-                            <input type="text" id="buscadorNombre" class="form-control d-none d-md-block"
-                                placeholder="Buscar por nombre...">
+                           
 
                         </div>
                         <div class="col">
                             <!-- en este caso cambiera el texto del placeholder según tamaño ventana desde JS-->
                             <input type="text" id="buscadorApellido" class="form-control"
-                                placeholder="Buscar por apellido...">
+                                placeholder="Apellido...">
                         </div>
                         <div class="col">
                             <select id="buscadorCompeticion" class="form-select">
-                                <option value="">todas competciones</option>
+                                <option value="">Competiciones</option>
                                 <option value="fútbol sala">Fútbol Sala</option>
                                 <option value="baloncesto">Baloncesto</option>
                                 <option value="voleybol">Voleybol</option>
@@ -1486,15 +1480,15 @@
                     <div class="row mb-3">
                         <div class="col">
                             <input type="text" id="buscadorNombreArbitro" class="form-control"
-                                placeholder="Buscar por nombre...">
+                                placeholder="Nombre...">
                         </div>
                         <div class="col">
                             <input type="text" id="buscadorApellidoArbitro" class="form-control"
-                                placeholder="Buscar por apellido...">
+                                placeholder="Apellido...">
                         </div>
                         <div class="col">
                             <select id="buscadorCompeticionArbitro" class="form-select">
-                                <option value="">todas competciones</option>
+                                <option value="">Competciones</option>
                                 <option value="fútbol sala">Fútbol Sala</option>
                                 <option value="baloncesto">Baloncesto</option>
                                 <option value="voleybol">Voleybol</option>
@@ -2303,7 +2297,7 @@
                     </button>
 
                     <button type="button" class="nav-link active fs-5" data-bs-toggle="modal"
-                        data-bs-target="#modalJugadores" aria-current="page">
+                        data-bs-target="#modalFiltrarJugadores" aria-current="page">
                         Jugadores
                     </button>
 

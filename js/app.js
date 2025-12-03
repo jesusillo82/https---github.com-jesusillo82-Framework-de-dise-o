@@ -134,7 +134,7 @@ De todas formas, podéis hacer uso del foro para compartir cualquier duda sobre 
 */
 
 /* modificación de estilo en modal de jugadores */
-const modalJugadores = document.getElementById('modalJugadores');
+const modalJugadores = document.getElementById('modalFiltrarJugadores');
 
 //obtengo contenido del modal
 const contenidoModalJugadores = modalJugadores.querySelector('.modal-content');
@@ -275,19 +275,30 @@ document.addEventListener("DOMContentLoaded", () => {
   - toLowerCase() convierte una cadena de texto a minúsculas.
   - querySelectorAll() devuelve todos los elementos del documento que coinciden con un selector CSS.
 
+  - IMPORTANTE: Tuve problema porque getElementById solo está disponible en document y lo estaba usando para
+  buscar dentro de un div específico. Para ello debo usar querySelector o querySelectorAll.
+
+  const inputNombre = divJugadoresInscritos.getElementById("buscadorNombre"); // incorrecto
+  const inputNombre = divJugadoresInscritos.querySelector("#buscadorNombre");
+
+
 */
 
 
 document.addEventListener("DOMContentLoaded", () => {
 
+
+  //div que contiene la tabla de jugadores y el select de competiciones
+  const divJugadoresInscritos = document.getElementById('modalFiltrarJugadores');
+
+  
   //recojo entradas a buscar
-  const inputNombre = document.getElementById("buscadorNombre");
-  const inputApellido = document.getElementById("buscadorApellido");
-  const selectCompeticion = document.getElementById("buscadorCompeticion");
-
-
+  const inputNombre = divJugadoresInscritos.querySelector("#buscadorNombre");
+  const inputApellido = divJugadoresInscritos.querySelector("#buscadorApellido");
+  const selectCompeticion = divJugadoresInscritos.querySelector('#buscadorCompeticion');
+  
   //seleccion todas las filas de la tabla de los jugadores
-  const filas = document.querySelectorAll("tbody tr");
+  const filas = divJugadoresInscritos.querySelectorAll("tbody tr");
 
   function filtrarJugadores() {
     // paso todo a minusculas de esta forma es indiferente escribir Mayúsculas o minúsculas
@@ -418,40 +429,6 @@ document.querySelectorAll('.collapse').forEach(collapseEl => {
   });
 });
 
-
-/*-------------------- ajuste de texto según tamaño de pantalla --------- 
-
-  - Cuando visualizao en móvil el placeholder del input del buscador de apellidos de jugadores es muy largo y no se ve completo.
-
-  - cambiaré el texto del placeholder según pantalla
-  - Parece un media query, el problema es que no puedo cambiar contenido html desde css
-  - innerWidth devuelve el ancho interior de la ventana en píxeles.
-  - resize se dispara cuando se cambia el tamaño de la ventana del navegador.
-*/
-document.addEventListener("DOMContentLoaded", () => {
-  const inputApellido = document.getElementById("buscadorApellido");
-
-  function actualizarPlaceholder() {
-    const ancho = window.innerWidth;
-
-    if (ancho < 576) {
-      // móviles pequeños (xs)
-      inputApellido.placeholder = "Apellido";
-    } else if (ancho >= 576 && ancho < 992) {
-      // tablets (sm y md)
-      inputApellido.placeholder = "Buscar Apellido...";
-    } else {
-      // escritorio (lg en adelante)
-      inputApellido.placeholder = "Buscar por Apellido...";
-    }
-  }
-
-  // inicializo al cargar
-  actualizarPlaceholder();
-
-  // actualizo al redimensionar
-  window.addEventListener("resize", actualizarPlaceholder);
-});
 
 
 
