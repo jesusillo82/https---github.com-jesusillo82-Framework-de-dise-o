@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,11 +25,11 @@
 
 <body>
 
-    
+
 
     <header>
 
-    
+
         <!-- barra de navegacion
 
                 NavbarNavbar responsive con enlaces a las secciones principales: Inicio, Equipos,
@@ -266,8 +265,6 @@
                     <!-- div clasificación atletismo-->
                     <div id="atletismo" class="competicion" style="display: none;">
 
-
-
                         <h5 class="text-center text-primary">Atletismo</h5>
                         <table class="table table-striped">
                             <thead>
@@ -313,7 +310,7 @@
         - Lo abro desde app.js
         - le aplico animate.css para animar la apertura del modal con animate__zoomIn
     
-    otras animaciones interesantes:
+        otras animaciones interesantes:
 
         animate__fadeInDown ----------- deslizar desde arriba
         animate__bounceIn ---------- rebote al entrar
@@ -321,7 +318,7 @@
     
         -->
 
-        
+
     <div class="modal fade" id="modalResultadis">
         <div class="modal-dialog modal-xl modal-dialog-scrollable animate__animated animate__zoomIn">
             <div class="modal-content">
@@ -343,11 +340,8 @@
                         <option value="atletismo">Atletismo</option>
                     </select>
 
-
                     <!-- div para resultados Futbol-sala-->
-
                     <div id="futbolSala" class="competicion">
-
                         <h5 class="text-center text-primary">Fútbol-sala</h5>
                         <table class="table">
                             <thead class="table-light">
@@ -374,13 +368,8 @@
                     </div>
 
 
-
-
                     <!-- div para resultados Baloncesto-->
-
-
                     <div id="baloncesto" class="competicion d-none">
-
                         <h5 class="text-center text-primary ">Baloncesto</h5>
                         <table class="table">
 
@@ -409,9 +398,7 @@
 
                     <!-- div para resultados Voleybol-->
                     <div id="voley" class="competicion d-none">
-
                         <h5 class="text-center text-primary">Voleybol</h5>
-
                         <table class="table">
                             <thead class="table-info">
                                 <tr>
@@ -439,7 +426,6 @@
 
                     <!-- div para resultados Atletismo-->
                     <div id="atletismo" class="competicion d-none">
-
                         <h5 class="text-center text-primary">Atletismo</h5>
                         <table class="table">
                             <thead class="table-danger">
@@ -476,18 +462,12 @@
 
     <!-- **********************************************************************************************************************
      ***************************modal de los EQUIPOS con card de JUGADORES mediante sistema GRID responsible***********************
-     *******************************************************************************************************************-->
-
-
-
-    <!--
-     
-        -Defino un equipo para cada competición a modo de ejemplo
-     
+     *******************************************************************************************************************
     
-    Fútbol Sala ------------------Equipo Los Rayo
+        -Defino un equipo para cada competición a modo de ejemplo con funcionalidad completa.
     -->
 
+    <!--   Fútbol Sala ------------------Equipo Los Rayo-->
     <div class="modal fade" id="modalLosRayo" tabindex="-1" aria-labelledby="modalEquipo1Label" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
@@ -502,8 +482,6 @@
                 <!-- Cuerpo -->
                 <div class="modal-body">
                     <div class="row g-4">
-
-
                         <!-- columna 1 logo    w-25 w-50 w-75 % ancho contenedor ajusto yo en css personalizado-->
                         <div class="col-md-4 text-center">
                             <img src="imagenes/logo/equipos/logo-LosRayo.jpg" alt="Logo equipo LOS RAYO F.C."
@@ -514,40 +492,28 @@
                         <!-- columna 2-->
                         <div class="col-md-4">
                             <h4 class="text-start text-danger pt-4">Historial</h4>
-
                             <ul class="pt-3 fs-5">
                                 <li><strong>Partidos jugados:</strong> 2</li>
                                 <li><strong>Victorias:</strong> 1</li>
                                 <li><strong>Derrotas:</strong> 0</li>
                                 <li><strong>Empates:</strong> 1</li>
                             </ul>
-
                         </div>
-                        <!-- columna 3 -->
 
+                        <!-- columna 3 -->
                         <div class="col-md-4">
                             <h4 class="text-start text-danger pt-4">Datos del equipo</h4>
-
-
                             <ul class="pt-3 fs-5">
                                 <li><strong>Curso:</strong> 1º ESO</li>
                                 <li><strong>Entrenador:</strong> Aurelio Martinez</li>
                                 <li><strong>Capitán:</strong> Alberto Saavedra</li>
-
                             </ul>
-
-
                         </div>
-
 
                     </div>
 
                     <!-- fila con los jugadores de la plantilla, colocados responsivamente-->
                     <div class="row g-4 border-danger mt-3">
-
-
-
-
                         <h4 class="text-start text-danger">Plantilla </h4>
 
                         <!-- Card jugador -->
@@ -632,8 +598,6 @@
 
                     </div><!-- fila jugadores-->
 
-
-
                     <!-- Pie -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -642,15 +606,10 @@
                 </div>
             </div>
         </div>
-
-
     </div>
 
 
-
-    <!--
-    Baloncesto ------------------Equipo A tope Siempre
-    -->
+    <!-- Baloncesto ------------------Equipo A tope Siempre -->
 
     <div class="modal fade" id="modalAtopeSiempre" tabindex="-1" aria-labelledby="modalEquipoAtope" aria-hidden="true">
         <div class="modal-dialog modal-xl">
@@ -667,52 +626,37 @@
                 <div class="modal-body">
                     <div class="row g-4">
 
-
-                        <!-- columna 1 logo    w-25 w-50 w-75 % ancho contenedor ajusto yo en css personalizado-->
+                        <!-- columna 1 logo    w-25 w-50 w-75 % ancho contenedor en bs. Ajusto yo en css personalizado con clase w-65-->
                         <div class="col-md-4 text-center">
                             <img src="imagenes/logo/equipos/logo.baloncesto-aTopeSiempre.png"
                                 alt="Logo equipo basket A tope Siempre" class="img-fluid rounded mx-auto d-block w-65">
                         </div>
 
-
                         <!-- columna 2-->
                         <div class="col-md-4">
                             <h4 class="text-start text-danger pt-4">Historial</h4>
-
                             <ul class="pt-3 fs-5">
                                 <li><strong>Partidos jugados:</strong> 3</li>
                                 <li><strong>Victorias:</strong> 1</li>
                                 <li><strong>Derrotas:</strong> 1</li>
                                 <li><strong>Empates:</strong> 1</li>
                             </ul>
-
                         </div>
-                        <!-- columna 3 -->
 
+                        <!-- columna 3 -->
                         <div class="col-md-4">
                             <h4 class="text-start text-danger pt-4">Datos del equipo</h4>
-
-
                             <ul class="pt-3 fs-5">
                                 <li><strong>Curso:</strong> 3ºB ESO</li>
                                 <li><strong>Entrenador:</strong> Marta Perez</li>
                                 <li><strong>Capitán:</strong> Jose Luis Sanchez</li>
-
                             </ul>
-
-
-
                         </div>
 
-
-                    </div>
+                    </div><!-- row-->
 
                     <!-- fila con los jugadores de la plantilla, colocados responsivamente-->
                     <div class="row g-4 border-danger mt-3">
-
-
-
-
                         <h4 class="text-start text-danger">Plantilla </h4>
 
                         <!-- Card jugador baloncesto -->
@@ -809,7 +753,7 @@
 
 
 
-                    <!-- Pie -->
+                    <!-- footer -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                     </div>
@@ -818,15 +762,9 @@
             </div>
         </div>
 
-
     </div>
 
-
-
-    <!--
-    Voleybol ------------------Los Pringels
-    -->
-
+    <!-- Voleybol ------------------Los Pringels -->
     <div class="modal fade" id="modalLosPringels" tabindex="-1" aria-labelledby="modalEquipoPringels"
         aria-hidden="true">
         <div class="modal-dialog modal-xl">
@@ -843,48 +781,36 @@
                 <div class="modal-body">
                     <div class="row g-4">
 
-
-                        <!-- columna 1 logo    w-25 w-50 w-75 % ancho contenedor ajusto yo en css personalizado-->
+                        <!-- columna 1 logo-->
                         <div class="col-md-4 text-center">
                             <img src="imagenes/logo/equipos/Volleyball-logo.jpg" alt="Logo equipo basket A tope Siempre"
                                 class="img-fluid rounded mx-auto d-block w-75">
                         </div>
 
-
                         <!-- columna 2-->
                         <div class="col-md-4">
                             <h4 class="text-start text-danger pt-4">Historial</h4>
-
                             <ul class="pt-3 fs-5">
                                 <li><strong>Partidos jugados:</strong> 3</li>
                                 <li><strong>Victorias:</strong> 3</li>
                                 <li><strong>Derrotas:</strong> 0</li>
                                 <li><strong>Empates:</strong> 0</li>
                             </ul>
-
                         </div>
-                        <!-- columna 3 -->
 
+                        <!-- columna 3 -->
                         <div class="col-md-4">
                             <h4 class="text-start text-danger pt-4">Datos del equipo</h4>
-
                             <ul class="pt-3 fs-5">
                                 <li><strong>Curso:</strong> Formación Profesional Administración</li>
                                 <li><strong>Entrenador:</strong> Jorge Perez</li>
                                 <li><strong>Capitán:</strong> Marta Cuenca</li>
-
                             </ul>
-
                         </div>
-
-
                     </div>
 
                     <!-- fila con los jugadores de la plantilla, colocados responsivamente-->
                     <div class="row g-4 border-danger mt-3">
-
-
-
 
                         <h4 class="text-start text-danger">Plantilla </h4>
 
@@ -989,39 +915,29 @@
                                 </div>
                             </div>
                         </div>
-
                     </div><!-- fila jugadores-->
 
-
-
-                    <!-- Pie -->
+                    <!-- footer -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                     </div>
-
                 </div>
             </div>
         </div>
 
-
     </div>
 
 
-
-
-
-
-
-
     <!-- modal para JUGADORES
-     
      
         - cada jugador estará dentro de un CARD
         - lo hago en HTML, luego lo haremos con angular
         - aria-label o aria-describedby accesibilidad para lectores de pantalla
     -->
+
     <!-- Modal fullscreen para que se abra toda la pantalla -->
-    <div class="modal fade" id="modalFiltrarJugadores" tabindex="-1" aria-labelledby="jugadoresLabel" aria-hidden="true">
+    <div class="modal fade" id="modalFiltrarJugadores" tabindex="-1" aria-labelledby="jugadoresLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
 
@@ -1034,25 +950,19 @@
 
                 <!-- Para dispositivos moviles puedo añadir  class="table-responsive"
                  la cual me permite añadir un scroll horizontal si  la tabla es muy grande-->
-
                 <div class="modal-body">
 
                     <!-- filtrado por nombre, apellido y comepticion-->
                     <div id="seccionFiltrado" class="row mb-3">
+                        <!-- filtrado por nombre-->
                         <div class="col">
-
-                 
-                            <!-- version para móvil. pantallas xs-->
-                            <input type="text" id="buscadorNombre" class="form-control d-block"
-                                placeholder="Nombre">
-                           
-
+                            <input type="text" id="buscadorNombre" class="form-control d-block" placeholder="Nombre">
                         </div>
+                        <!--- filtrado por apellido-->
                         <div class="col">
-                            <!-- en este caso cambiera el texto del placeholder según tamaño ventana desde JS-->
-                            <input type="text" id="buscadorApellido" class="form-control"
-                                placeholder="Apellido...">
+                            <input type="text" id="buscadorApellido" class="form-control" placeholder="Apellido...">
                         </div>
+                        <!--filtrado competicion-->
                         <div class="col">
                             <select id="buscadorCompeticion" class="form-select">
                                 <option value="">Competiciones</option>
@@ -1064,12 +974,8 @@
                         </div>
                     </div>
 
-
-
-
                     <div class="container table-responsive-sm">
                         <!-- Tabla de jugadores -->
-
                         <table class="table">
                             <thead class="table-danger">
                                 <tr>
@@ -1080,7 +986,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-
+                                <!-- jugador-->
                                 <tr>
                                     <td>Jose Luis</td>
                                     <td>Sanchez</td>
@@ -1144,16 +1050,10 @@
                                     </td>
                                 </tr>
 
-
-
-
                             </tbody>
                         </table>
 
-                        <!-- Cards estarán ocultos con collapse, mediante data-bs-toggle el botón ver mas lo abre -->
-
-
-
+                        <!-- Cards estarán ocultos con collapse, mediante data-bs-toggle el botón mostrar/ocultar lo abre -->
                         <!-- card bootstrap-->
                         <div id="infoJugador1" class="card mb-3 collapse mt-3" style="max-width: 540px;">
                             <div class="row g-0">
@@ -1270,14 +1170,7 @@
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
-
-
-
-
-
                     </div>
                 </div>
 
@@ -1290,15 +1183,12 @@
         </div>
     </div>
 
-    <!-- modal para corredores de ATLETISMO
-     
-    -->
+    <!-- modal para corredores de ATLETISMO-->
+
     <!-- Modal fullscreen para que se abra toda la pantalla -->
     <div class="modal fade" id="modalAtletismo" tabindex="-1" aria-labelledby="jugadoresLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
-
-
                 <div class="modal-header bg-light text-danger">
                     <h4 class="modal-title" id="jugadoresLabel">atletas</h4>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
@@ -1309,13 +1199,10 @@
                  la cual me permite añadir un scroll horizontal si  la tabla es muy grande-->
 
                 <div class="modal-body">
-
-
-
-
                     <div class="container table-responsive-sm">
-                        <!-- Tabla de jugadores -->
 
+
+                        <!-- Tabla de jugadores -->
                         <table class="table">
                             <thead class="table-danger">
                                 <tr>
@@ -1358,16 +1245,10 @@
                                         </button>
                                     </td>
                                 </tr>
-
-
-
-
                             </tbody>
                         </table>
 
-                        <!-- Cards estarán ocultos con collapse, mediante data-bs-toggle el botón ver mas lo abre -->
-
-
+                        <!-- Cards estarán ocultos con collapse, mediante data-bs-toggle el botón mostrar/oculttar lo abre -->
 
                         <!-- card bootstrap-->
                         <div id="infoJugador1" class="card mb-3 collapse mt-3" style="max-width: 540px;">
@@ -1449,12 +1330,7 @@
 
                             </div>
                         </div>
-
-
-
-
-
-                    </div>
+                    </div><!-- container tabla  -->
                 </div>
 
                 <!-- Footer -->
@@ -1470,15 +1346,14 @@
 
     <!-- modal para ÁRBITROS
      
-     
         - cada árbitro tendrá un CARD con su ficha
         - lo hago en HTML, luego lo haremos con angular
     -->
+
     <!-- Modal fullscreen para que se abra toda la pantalla -->
     <div class="modal fade" id="modalArbitros" tabindex="-1" aria-labelledby="jugadoresLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
-
 
                 <div class="modal-header bg-light text-danger">
                     <h4 class="modal-title" id="jugadoresLabel">Árbitros </h4>
@@ -1486,16 +1361,12 @@
                         aria-label="Cerrar"></button>
                 </div>
 
-
                 <div class="modal-body">
 
                     <!-- filtrado por nombre, apellido y comepticion-->
-
-
                     <div class="row mb-3">
                         <div class="col">
-                            <input type="text" id="buscadorNombreArbitro" class="form-control"
-                                placeholder="Nombre...">
+                            <input type="text" id="buscadorNombreArbitro" class="form-control" placeholder="Nombre...">
                         </div>
                         <div class="col">
                             <input type="text" id="buscadorApellidoArbitro" class="form-control"
@@ -1511,11 +1382,6 @@
                             </select>
                         </div>
                     </div>
-
-
-
-
-
 
                     <div class="container">
                         <!-- Tabla de jugadores -->
@@ -1575,14 +1441,10 @@
                                         </button>
                                     </td>
                                 </tr>
-
-
                             </tbody>
                         </table>
 
-                        <!-- Cards estarán ocultos con collapse, mediante data-bs-toggle el botón ver mas lo abre -->
-
-
+                        <!-- Cards estarán ocultos con collapse, mediante data-bs-toggle el botón mostrar/ocultar -->
 
                         <!-- card bootstrap-->
                         <div id="infoJugador1" class="card mb-3 collapse mt-3" style="max-width: 540px;">
@@ -1676,12 +1538,7 @@
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
-                    </div>
+                    </div><!-- container tabla  -->
                 </div>
 
                 <!-- Footer -->
@@ -1807,7 +1664,6 @@
 
                 </div>
 
-
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
                 </div>
@@ -1837,21 +1693,19 @@
 
             <h3 class="display-4">¡Compite y aprende.!</h3>
             <p class="lead">Anímate y participa en las ligas deportivas de nuestro instituto.</p>
-            <!-- alinear botona  la derecha. Lo puedo hacer con gri en una fila y 2 columnas para texto y boton-->
-            <!--  Button to Open the Modal bootstrap -->
-
+            <!-- botón abrir modal
+                    - alinear botona  la derecha. Lo puedo hacer con gri en una fila y 2 columnas para texto y boton
+            -->
             <div class="d-flex justify-content-end">
                 <button type="button" class="botones btn btn-primary" data-bs-toggle="modal"
                     data-bs-target="#modalInscripcion">
                     Apuntate ya.
                 </button>
             </div>
-
-
         </div>
     </section>
 
-    <!-- The Modal para la inscripcion. 
+    <!-- Modal para la inscripcion. 
      En este caso se abre desde el boton sin necesidad de código js 
      Uso animacion fadeInDown-->
 
@@ -1898,8 +1752,6 @@
                                 placeholder="Escribe los nombres de los jugadores con sus dos apellidos"
                                 required></textarea>
                         </div>
-
-
                     </form>
                 </div>
 
@@ -1935,20 +1787,16 @@
 
 
 
-
-
-
     <!-- *********************************************seccion NOTICIAS ****************************************************
             ***************************************************************************************************************-->
 
     <h2 class="m-3 texto-titulos">Noticias recientes</h2>
     <p id="contadorDiapositivas" class="text-center fw-bold contador-carousel"></p>
 
-
+    <!-- Carrusel de noticias 
+        - cada noticia abre un modal con la noticia completa
+    -->
     <div id="carouselExampleDark" class="carousel carousel-dark slide carousel-fade">
-
-
-
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
@@ -1958,6 +1806,7 @@
                 aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
+            <!--noticia 1-->
             <div class="carousel-item active" data-bs-interval="10000">
                 <img src="imagenes/logo/voleybol-red.avif" class="d-block w-100" data-bs-toggle="modal"
                     data-bs-target="#modalVoleybol" alt="noticias voleybol">
@@ -1966,6 +1815,7 @@
                     <p class="fs-3 text-end">Importante cambio en la normativa.</p>
                 </div>
             </div>
+            <!--noticia 2-->
             <div class="carousel-item" data-bs-interval="2000">
                 <img src="imagenes/logo/atletismoNoticia.jpg" class="d-block w-100 " data-bs-toggle="modal"
                     data-bs-target="#modalAtletismo" alt="noticias atletismo">
@@ -1974,24 +1824,19 @@
                     <p class="fs-3 text-start text-white">Cambio de última hora en las carrera del viernes.</p>
                 </div>
             </div>
-
+            <!--noticia 3-->
             <div class="carousel-item">
                 <img src="imagenes/logo/vista-frontal-hombre-jugando-baloncesto-solo.jpg" class="d-block w-100"
                     alt="noticias baloncesto" data-bs-toggle="modal" data-bs-target="#modalBaloncesto">
                 <div class="carousel-caption d-none d-md-block">
                     <h3 class="text-start text-danger">Baloncesto</h3>
                     <p class="fs-3 text-start text-white">Los chicos de ESO se imponen a los de FP consolidando
-                        la
-                        primera posición.
+                        la primera posición.
                     </p>
-
-
-
-
                 </div>
             </div>
-
         </div>
+        <!-- botones adelante y hacia atras-->
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -2008,7 +1853,6 @@
     <div class="modal fade" id="modalVoleybol" tabindex="-1" aria-labelledby="modalVoleybolLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-
                 <!-- meto imagen en cabecera-->
                 <div class="modal-header p-0">
                     <img src="imagenes/logo/voleybol-red.avif" class="imagenesModalNoticiaCarrusel"
@@ -2022,11 +1866,9 @@
                     <h5 class="modal-title mb-3" id="modalVoleybolLabel">Noticia de Voleybol</h5>
                     <p class="texto-parrafos">Importante novedad en la normativa de la competición. <br><br>
                         Se aprueba el enfrentamiento a un sólo partido en campo neutral ebtre los equipos que
-                        resulten
-                        de ganar la liga
-                        de nuestro instituto y el ganador de la liga que se esta desarrollando en el IES Santa
-                        Maria de
-                        Alarcos.<br><br>
+                        resulten de ganar la liga de nuestro instituto y el ganador de la liga que se esta desarrollando
+                        en el IES Santa
+                        Maria de Alarcos.<br><br>
                         Seguimos apostando por el voley.</p>
                 </div>
                 <!-- Footer -->
@@ -2056,12 +1898,10 @@
                     <p class="texto-parrafos">Cambios de última hora en las carrera del
                         viernes.<br><br>
                         A causa de las previsiones de lluvia para el próximo viernes y con el fin de que la
-                        carrera se
-                        celebré en las mejores condiciones posiible,
+                        carrera se celebre en las mejores condiciones posibles,
                         la organización ha decidido retrasar la misma a la tarde.<br><br>
                         El horario será a las 18:00 y enfrentará a Sonia Martinez y Jose Manuel Carpintero en
-                        una
-                        carrera que promete ser emocionante.<br><br>
+                        una carrera que promete ser emocionante.<br><br>
                         No te lo pierdas.</p>
                 </div>
                 <!-- Footer -->
@@ -2091,10 +1931,8 @@
                 <div class="modal-body">
                     <h5 class="modal-title mb-3" id="modalBaloncestoLabel">Noticia de Baloncesto</h5>
                     <p class="texto-parrafos"> El equipo "A tope Siempre" sigue líder invicto tras imponerse a
-                        "Los
-                        máquinas" en un partido muy reñido que empezarón controlando los chicos de formación
-                        profesional
-                        pero que finalmente fué arrasado por los de ESO.
+                        "Los Máquinas" en un partido muy reñido que empezarón controlando los chicos de formación
+                        profesional pero que finalmente fueron superados por los de la ESO.
                         <br><br>La próxima cita será el martes que viene en horario habitual.
                         <br><br> No te pierdas nada.
                     </p>
@@ -2108,19 +1946,15 @@
     </div>
 
 
-
-
-
     <!-- Sección Resumen (section.features)
 
         Además, se incluirá una sección con un resumen de las competiciones existentes, así como
         información importante para usuarios de cara a las inscripciones o al seguimiento de la propia
         liga.
-
-   
     -->
-    <!-- Sección Resumen (section.features)-->
 
+
+    <!-- Sección Resumen (section.features)-->
     <section class="features py-5 bg-light mt-4">
         <h3 class="m-3 texto-titulos text-center">Resumen</h3>
         <div class="container ">
@@ -2139,10 +1973,8 @@
                     <i class="bi bi-wallet-fill iconos-resumen">
                         <h3>Inscripción</h3>
                         <p class="fs-5">En secretaría de 10 a 12 de la mañana. Imprescindible que todos los
-                            miembros del
-                            equipo sean estudiantes del instituto.</p>
+                            miembros del equipo sean estudiantes del instituto.</p>
                     </i>
-
                 </div>
 
                 <!-- icono seguimiento-->
@@ -2288,12 +2120,9 @@
         <div id="container-footer" class="container pt-4">
             <div class="row align-items-sm-start">
 
-
+                <!--accesos direcos-->
                 <div class="col">
                     <h4 class="text-uppercase">Accesos directos</h4>
-
-
-
                     <button type="button" class="nav-link active fs-5" data-bs-toggle="modal"
                         data-bs-target="#modalResultadis" aria-current="page">
                         Resultados
@@ -2304,8 +2133,6 @@
                         Competiciones
                     </button>
 
-
-
                     <button type="button" class="nav-link active fs-5" data-bs-toggle="modal"
                         data-bs-target="#modalInscripcion" aria-current="page">
                         Inscripción
@@ -2315,48 +2142,38 @@
                         data-bs-target="#modalFiltrarJugadores" aria-current="page">
                         Jugadores
                     </button>
-
-
-
-
                 </div>
 
-                <!-- se me descuadra en moviles. Para ajustar a moviles puedo usar las unidades responsives
-                 de Bootstrap como 
-                 <div id="footerContacto" class="col mt-5 mt-md-3">
+                <!-- footer Contacto
+
+                    -se me descuadra en moviles. Para ajustar a moviles puedo usar las unidades responsives de Bootstrap como 
+                        <div id="footerContacto" class="col mt-5 mt-md-3">
                     - mt indica margen-top de 5 (0-5 bootstrap) equivale a 3REM
                     - mt-md-3 margen top para ventanas Middle de 3. Equivale a 1REM
                     - text-md-start  -- para pantallas medianas alinea texto a la izquierda
                     Decido hacerlo en style.css
-                    
-                    
-                    -->
+        
+                -->
                 <div id="footerContacto" class="col">
                     <h4 class="text-uppercase">Contacto</h4>
-
-
-
+                    <!-- direccion-->
                     <div class="d-flex align-items-center mb-3">
                         <i class="bi bi-geo-alt-fill iconos-footer-contacto"></i>
                         <p class="fs-5">Paseo de la Universidad, 1 13005 Ciudad Real (Spain) Mapa</p>
                     </div>
-
-
-
+                    <!-- telefono-->
                     <div class="d-flex align-items-center mb-3">
                         <i class="bi bi-telephone iconos-footer-contacto"></i>
                         <p class="fs-5">926232530</p>
                     </div>
-
+                    <!-- email-->
                     <div class="d-flex align-items-center mb-3">
-                        <i class="bi bi-envelope-paper-fill iconos-footer-contacto">
-
-                        </i>
+                        <i class="bi bi-envelope-paper-fill iconos-footer-contacto"></i>
                         <p class="fs-5">13001327.ies@educastillalamancha.es</p>
                     </div>
                 </div>
 
-
+                <!-- redes sociales. No estan implementadas puesto que no tengo cuentas para ello-->
                 <div id="icoRedesSociales" class="col text-end">
                     <h4 class="text-uppercase">En la red</h4>
 
@@ -2370,20 +2187,12 @@
                         <a href="#"><img src="imagenes/logo/logo_whatsapp.png" alt="WhatsApp" width="40"
                                 height="40"></a>
                     </div>
-
-
                 </div>
-
-
-
-
+                <!-- derechos-->
                 <div id="copyright" class="row">
-                    <!-- derechos-->
+                    
                     <p class="font-weight-bold text-center">
-                        Copyright
-                        © 2025
-                        Liga Deportiva del Instituto - Jesús Bernabé Imedio Perea -
-                        Reservados todos los derechos. </p>
+                        Copyright© 2025 Liga Deportiva del Instituto - Jesús Bernabé Imedio Perea - Reservados todos los derechos. </p>
                 </div>
 
             </div>
