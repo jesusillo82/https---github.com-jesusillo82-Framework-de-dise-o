@@ -1,190 +1,15 @@
 "use strict";//Para ES6 módulos (<script type="module">), el modo estricto por activado por defecto.
 
 
-/* ***************************************+++ Funciionalidades con javaScript */
+/* ------------------------------------------ sección NAVBAR ---------------------------------------- 
+------------------------------------------------------------------------------------------------------*/
 
+/* --------- Clasificaciones -----------
 
-
-/* ------------------------------------------ sección HERO formulario inscripción ---------------------------------------- */
-
-/* modal de inscripción. lo hago directamente con html.*/
-
-/* modal de clasificaciones. lo hago directamente con html.*/
-
-/* ******************+ modal de resultados. lo abro desde app.js *******************+*/
-
-// inicializo el modal de resultados
-const modalResultados = new bootstrap.Modal(document.getElementById('modalResultadis'));
-// asigno el evento click al botón de ver resultados
-document.getElementById('enlaceResultados').addEventListener('click', function (e) {
-  e.preventDefault(); // evito que recargue la página al usar href="#"
-  modalResultados.show(); // si pongo hide lo cierra
-});
-
-
-
-
-
-
-
-/* control del Modal del fomrulario 
-
-- consideraciones:
-  shown.bs.modal: se dispara cuando el modal ya se ha mostrado al usuario (después de la animación de apertura).
-  show.bs.modal: se dispara justo antes de que el modal se muestre al usuario.
-  hide.bs.modal: se dispara justo antes de que el modal se oculte.
-  hidden.bs.modal: se dispara cuando el modal ya se ha ocultado al usuario (después de la animación de cierre).
-  
-  
-  según requisitos:
-
-Modal de reserva/inscripción:
-  o Al abrir el modal (shown.bs.modal), enfocar el primer campo del formulario.
-  o Al cerrarlo (hidden.bs.modal), resetear el formulario.
-
-
-*/
-const modalInscripcion = document.getElementById('modalInscripcion');
-const formulario = document.getElementById('formularioInscripcion');
-const nombreEquipo = document.getElementById('nombreEquipo');
-
-// ponemos foco en el primer campo al abrir el modal con evento shown.bs.modal 
-modalInscripcion.addEventListener('shown.bs.modal', () => {
-  nombreEquipo.focus();
-});
-
-// Reseteamos el formulario al cerrar el modal. Capturamos el evento hidden.bs.modal
-modalInscripcion.addEventListener('hidden.bs.modal', () => {
-  formulario.reset();
-  formulario.classList.remove('was-validated'); // limpia validación visual
-});
-
-
-/*toast del fomrulario de incripción.Control  */
-
-document.getElementById('formularioInscripcion').addEventListener('submit', function (e) {
-  e.preventDefault(); // para detener el evento y que no lo envie
-
-  // Validar el formulario por defecto
-  if (this.checkValidity()) {
-    // cierro modal
-    const modal = bootstrap.Modal.getInstance(document.getElementById('modalInscripcion'));
-    modal.hide();
-
-    // muestro toast de confirmación
-    const toast = new bootstrap.Toast(document.getElementById('toastConfirmacionFormulario'), { delay: 10000 });
-    toast.show();
-  } else {
-    this.classList.add('was-validated'); // activa estilos de validación Bootstrap
-  }
-});
-
-
-
-/* ------------------------------------------ sección carrusel de notincias ---------------------------------------- */
-
-
-/* contador para el carrusel de noticias */
-document.addEventListener('DOMContentLoaded', function () {
-  // obtengo elementos del DOM
-  const carousel = document.getElementById('carouselExampleDark');
-  const contador = document.getElementById('contadorDiapositivas');
-  const totalDiapositivas = carousel.querySelectorAll('.carousel-item').length;
-
-  // Inicializar contador en la primera diapositiva
-  contador.textContent = `Noticia 1 de ${totalDiapositivas}`;
-
-  // Escuchar el evento de Bootstrap
-  carousel.addEventListener('slid.bs.carousel', function (event) {
-    // event.to devuelve el índice de la diapositiva activa (0,1,2,...)
-    const indiceDiapositiva = event.to + 1; // sumamos 1 para que empiece en 1
-    contador.textContent = `Noticia ${indiceDiapositiva} de ${totalDiapositivas}`;
-  });
-});
-
-/* modales de noticias */
-
-
-
-
-
-/* ******************** modificación de ESTILO  en modal de jugadores ***********************+
-*********************************************************************************************/
-
-// obtengo el modal de jugadores
-const modalJugadores = document.getElementById('modalFiltrarJugadores');
-
-//obtengo contenido del modal
-const contenidoModalJugadores = modalJugadores.querySelector('.modal-content');
-
-//obtengo cabecera del modal
-const cabeceraModalJugadores = modalJugadores.querySelector('.modal-header');
-
-// obtengo h4 del modal
-const h4ModalJugadores = cabeceraModalJugadores.querySelector('h4');
-
-
-// capturo evento shown.bs.modal que se dispara al mostrarse el modal
-modalJugadores.addEventListener('shown.bs.modal', () => {
-
-  // estilo contenido
-  contenidoModalJugadores.style.backgroundColor = '#b1d4f9ff';
-  // estilo cabecera
-  cabeceraModalJugadores.style.backgroundColor = '#f8d0d0ff';
-  // estilo h4
-  h4ModalJugadores.style.color = '#5f6a7aff';
-  h4ModalJugadores.style.fontWeight = 'bold';
-
-});
-
-
-/* *************************** filtrados equipos, resultados y clasificaciones ****************
-**********************************************************************************************-*/
-
-
-
-/*-----------------filtro de EQUIPOS
-
-  - implemento directamente en navBar para que sea diferente al de resultado y clasificaiones
+  -El modal lo abro directamente con html.
 */
 
-/*---------------filtro de RESULTADOS 
-
-  - por competición seleccionada en el select
-  - por defecto muestra los resultados de fútbol-sala porque en el html
-      no tiene definida la clase d-none <div id="futbolSala" class="competicion">
-  - se captura el evento change del select 
-*/
-document.addEventListener("DOMContentLoaded", function () {
-
-  // recojo elementos del modal
-  const modal = document.getElementById("modalResultadis");
-  const select = modal.querySelector("#selectCompeticionResultados");
-  const competiciones = modal.querySelectorAll(".competicion");
-
-  // función para mostrar los resultados según la competición seleccionada
-  function mostrarResultados() {
-    // Ocultar todas las competiciones dentro del modal
-    competiciones.forEach(div => div.classList.add("d-none"));
-    // Mostrar la seleccionada
-    const seleccion = select.value;
-    // busco el div correspondiente a la selección
-    const divSeleccionado = modal.querySelector("#" + seleccion)
-    // muestro el div seleccionado
-    if (divSeleccionado) {
-      divSeleccionado.classList.remove("d-none");
-    }
-  }
-
-  // Evento al cambiar el select
-  select.addEventListener("change", mostrarResultados);
-  // Mostrar la primera opción por defecto al abrir el modal
-  mostrarResultados();
-});
-
-
-
-/*-----------------------filtro de las CLASIFICACIONES 
+/***filtro de las clasificaciones por competicion** 
 
   - por competición seleccionada en el select
   - por defecto muestra los resultados de fútbol-sala porque en el html su display es block y para los demas es none
@@ -230,8 +55,85 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-/* *************************** filtrado JUGADORES*******************************************+
-**********************************************************************************************
+
+/* -----------Resultados -----------*/
+
+/****inicialización del modal****/
+
+const modalResultados = new bootstrap.Modal(document.getElementById('modalResultadis'));
+// asigno el evento click al botón de ver resultados
+document.getElementById('enlaceResultados').addEventListener('click', function (e) {
+  e.preventDefault(); // evito que recargue la página al usar href="#"
+  modalResultados.show(); // si pongo hide lo cierra
+});
+
+/****filtro de resultados ****
+
+  - filtro por competición seleccionada en el select
+  - por defecto muestra los resultados de fútbol-sala porque en el html
+      no tiene definida la clase d-none <div id="futbolSala" class="competicion">
+  - se captura el evento change del select 
+*/
+document.addEventListener("DOMContentLoaded", function () {
+
+  // recojo elementos del modal
+  const modal = document.getElementById("modalResultadis");
+  const select = modal.querySelector("#selectCompeticionResultados");
+  const competiciones = modal.querySelectorAll(".competicion");
+
+  // función para mostrar los resultados según la competición seleccionada
+  function mostrarResultados() {
+    // Ocultar todas las competiciones dentro del modal
+    competiciones.forEach(div => div.classList.add("d-none"));
+    // Mostrar la seleccionada
+    const seleccion = select.value;
+    // busco el div correspondiente a la selección
+    const divSeleccionado = modal.querySelector("#" + seleccion)
+    // muestro el div seleccionado
+    if (divSeleccionado) {
+      divSeleccionado.classList.remove("d-none");
+    }
+  }
+
+  // Evento al cambiar el select
+  select.addEventListener("change", mostrarResultados);
+  // Mostrar la primera opción por defecto al abrir el modal
+  mostrarResultados();
+});
+
+
+/* ------------Jugadores -----------
+
+  ******* modificación de ESTILO  en modal de jugadores */
+
+// obtengo el modal de jugadores
+const modalJugadores = document.getElementById('modalFiltrarJugadores');
+
+//obtengo contenido del modal
+const contenidoModalJugadores = modalJugadores.querySelector('.modal-content');
+
+//obtengo cabecera del modal
+const cabeceraModalJugadores = modalJugadores.querySelector('.modal-header');
+
+// obtengo h4 del modal
+const h4ModalJugadores = cabeceraModalJugadores.querySelector('h4');
+
+
+// capturo evento shown.bs.modal que se dispara al mostrarse el modal
+modalJugadores.addEventListener('shown.bs.modal', () => {
+
+  // estilo contenido
+  contenidoModalJugadores.style.backgroundColor = '#b1d4f9ff';
+  // estilo cabecera
+  cabeceraModalJugadores.style.backgroundColor = '#f8d0d0ff';
+  // estilo h4
+  h4ModalJugadores.style.color = '#5f6a7aff';
+  h4ModalJugadores.style.fontWeight = 'bold';
+
+});
+
+
+/* ****** filtrado JUGADORES********
 
 
   filtrado de JUGADORES por NOMBRE y APELLIDO y COMPETICIONES
@@ -322,9 +224,16 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-/*  *************************** filtrado ÁRBITROS*******************************************+
-**********************************************************************************************
 
+/*-----------------Equipos ------------
+
+  - implemento directamente en navBar para que sea diferente al de resultado y clasificaiones
+*/
+
+
+
+
+/*  ----------Árbitros ----------------
 
 filtrado de ÁRBITROS por NOMBRE y APELLIDO y COMPETICIONES
 
@@ -378,6 +287,94 @@ document.addEventListener("DOMContentLoaded", () => {
   inputNombre.addEventListener("keyup", filtrarArbitros);// keyup nos permite realizar filtrado mientras escribimos
   inputApellido.addEventListener("keyup", filtrarArbitros);
   selectCompeticion.addEventListener("change", filtrarArbitros);// change nos permite detectar cambio en el select
+});
+
+
+
+
+
+
+
+/* ------------------------------------------ sección HERO formulario inscripción ----------------------------------------
+------------------------------------------------------------------------------------------------------------------------- */
+
+/* ------- modal de inscripción. lo hago directamente con html.*/
+
+/* -------poner foco y resetear formulario del modal de inscripción
+
+- consideraciones:
+  shown.bs.modal: se dispara cuando el modal ya se ha mostrado al usuario (después de la animación de apertura).
+  show.bs.modal: se dispara justo antes de que el modal se muestre al usuario.
+  hide.bs.modal: se dispara justo antes de que el modal se oculte.
+  hidden.bs.modal: se dispara cuando el modal ya se ha ocultado al usuario (después de la animación de cierre).
+  
+  
+  según requisitos:
+
+Modal de reserva/inscripción:
+  o Al abrir el modal (shown.bs.modal), enfocar el primer campo del formulario.
+  o Al cerrarlo (hidden.bs.modal), resetear el formulario.
+
+
+*/
+const modalInscripcion = document.getElementById('modalInscripcion');
+const formulario = document.getElementById('formularioInscripcion');
+const nombreEquipo = document.getElementById('nombreEquipo');
+
+// ponemos foco en el primer campo al abrir el modal con evento shown.bs.modal 
+modalInscripcion.addEventListener('shown.bs.modal', () => {
+  nombreEquipo.focus();
+});
+
+// Reseteamos el formulario al cerrar el modal. Capturamos el evento hidden.bs.modal
+modalInscripcion.addEventListener('hidden.bs.modal', () => {
+  formulario.reset();
+  formulario.classList.remove('was-validated'); // limpia validación visual
+});
+
+
+/*toast del fomrulario de incripción.Control  */
+
+document.getElementById('formularioInscripcion').addEventListener('submit', function (e) {
+  e.preventDefault(); // para detener el evento y que no lo envie
+
+  // Validar el formulario por defecto
+  if (this.checkValidity()) {
+    // cierro modal
+    const modal = bootstrap.Modal.getInstance(document.getElementById('modalInscripcion'));
+    modal.hide();
+
+    // muestro toast de confirmación
+    const toast = new bootstrap.Toast(document.getElementById('toastConfirmacionFormulario'), { delay: 10000 });
+    toast.show();
+  } else {
+    this.classList.add('was-validated'); // activa estilos de validación Bootstrap
+  }
+});
+
+
+
+/* ------------------------------------------ sección CARRUSEL de notincias ----------------------------------------
+------------------------------------------------------------------------------------------------------------------- */
+
+
+/* ----- contador para el carrusel de noticias ------*/
+
+document.addEventListener('DOMContentLoaded', function () {
+  // obtengo elementos del DOM
+  const carousel = document.getElementById('carouselExampleDark');
+  const contador = document.getElementById('contadorDiapositivas');
+  const totalDiapositivas = carousel.querySelectorAll('.carousel-item').length;
+
+  // Inicializar contador en la primera diapositiva
+  contador.textContent = `Noticia 1 de ${totalDiapositivas}`;
+
+  // Escuchar el evento de Bootstrap
+  carousel.addEventListener('slid.bs.carousel', function (event) {
+    // event.to devuelve el índice de la diapositiva activa (0,1,2,...)
+    const indiceDiapositiva = event.to + 1; // sumamos 1 para que empiece en 1
+    contador.textContent = `Noticia ${indiceDiapositiva} de ${totalDiapositivas}`;
+  });
 });
 
 
