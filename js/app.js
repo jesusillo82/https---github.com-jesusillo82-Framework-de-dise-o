@@ -385,7 +385,6 @@ document.addEventListener("DOMContentLoaded", () => {
 /* ---------------------------Registro en consola de los eventos COLLAPSE de las Cards-------------
  ----------------------------------------------------------------------------------------------------------
  
- - me he ayudado de la IA para hacerlo
  - eventos:
    • show.bs.collapse: se dispara justo antes de que el contenido colapsable se muestre.
    • shown.bs.collapse: se dispara justo después de que el contenido colapsable se haya mostrado.
