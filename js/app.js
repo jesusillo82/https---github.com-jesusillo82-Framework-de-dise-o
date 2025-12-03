@@ -1,3 +1,6 @@
+"use strict";//Para ES6 módulos (<script type="module">), el modo estricto por activado por defecto.
+
+
 /* ***************************************+++ Funciionalidades con javaScript */
 
 
