@@ -20,7 +20,7 @@ body {
 
 .texto-titulos {
   color: var(--color-terciario);
-  text-decoration: solid;
+  text-decoration-style: solid;
   text-transform: uppercase;
   font-size: 2rem;
   margin-top: 1rem;
