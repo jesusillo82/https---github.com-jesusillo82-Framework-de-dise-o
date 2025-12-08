@@ -28,8 +28,6 @@
 
 
     <header>
-
-
         <!-- barra de navegacion
 
                 NavbarNavbar responsive con enlaces a las secciones principales: Inicio, Equipos,
@@ -52,21 +50,16 @@
                             <a class="nav-link active texto-enlaces-navbar" aria-current="page" href="#">Inicio
                             </a>
                         </li>
-
                         <!-- Equipos
-
                         - En este caso el filtrado por competción lo pongo directamente en el dropdown del navbar, mientras que para los apartados juagadores
                         y árbitros lo hago mediante un modal con un filtrado mediante select. Busco hacerlo de varias formas.
-        
                         -->
-
-
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle texto-enlaces-navbar" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Equipos
                             </a>
-                            <ul class="dropdown-menu texto-enlaces-navbar">
+                            <ul class="dropdown-menu animate__animated animate__fadeInUp  animate__slow texto-enlaces-navbar">
                                 <!-- competiciones-->
                                 <li>Futbol-sala</li>
                                 <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
@@ -80,8 +73,8 @@
                                 <li><a class="dropdown-item">Los que faltaban(Bachillerato 1ºA)</a></li>
                                 <li>Voleybol</li>
                                 <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalLosPringels"
-                                        href="#">Los pringels (FP administración)</a></li>
-                                <li><a class="dropdown-item">Los chunguitos (fp automoción)</a></li>
+                                        href="#">Los pringels (FP Administración)</a></li>
+                                <li><a class="dropdown-item">Los chunguitos (FP Automoción)</a></li>
                                 <li><a class="dropdown-item">Mejor callados (ESO 4A)</a></li>
                                 <li>Atletismo</li>
                                 <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalAtletismo"
@@ -122,11 +115,7 @@
                                 data-bs-toggle="modal" data-bs-target="#modalContacto">Contacto
                             </a>
                         </li>
-
-
-
                     </ul>
-
                 </div>
             </div>
         </nav>
@@ -1085,7 +1074,7 @@
                         </div>
 
                         <!-- card bootstrap-->
-                        <div id="infoJugador2" class="card mb-3 collapse mt-3" style="max-width: 540px;">
+                        <div id="infoJugador2" class="card mb-3 collapse mt-3 " style="max-width: 540px;">
                             <div class="row g-0">
                                 <div class="col-md-4">
                                     <img src="./imagenes/fotoCard/cardImagen2.jpg" class="img-fluid rounded-start"
@@ -1409,7 +1398,7 @@
                                     <td>Fútbol Sala</td>
                                     <td>
                                         <button class="btn btn-primary btn-sm" data-bs-toggle="collapse"
-                                            data-bs-target="#infoJugador1">
+                                            data-bs-target="#infoArbitro1">
                                             mostrar/ocultar
                                         </button>
                                     </td>
@@ -1420,7 +1409,7 @@
                                     <td>Atletismo</td>
                                     <td>
                                         <button class="btn btn-primary btn-sm" data-bs-toggle="collapse"
-                                            data-bs-target="#infoJugador2">
+                                            data-bs-target="#infoArbitro2">
                                             mostrar/ocultar
                                         </button>
                                     </td>
@@ -1432,7 +1421,7 @@
                                     <td>Baloncesto</td>
                                     <td>
                                         <button class="btn btn-primary btn-sm" data-bs-toggle="collapse"
-                                            data-bs-target="#infoJugador3">
+                                            data-bs-target="#infoArbitro3">
                                             mostrar/ocultar
                                         </button>
                                     </td>
@@ -1444,7 +1433,7 @@
                                     <td>Voleybol</td>
                                     <td>
                                         <button class="btn btn-primary btn-sm" data-bs-toggle="collapse"
-                                            data-bs-target="#infoJugador4">
+                                            data-bs-target="#infoArbitro4">
                                             mostrar/ocultar
                                         </button>
                                     </td>
@@ -1455,7 +1444,7 @@
                         <!-- Cards estarán ocultos con collapse, mediante data-bs-toggle el botón mostrar/ocultar -->
 
                         <!-- card bootstrap-->
-                        <div id="infoJugador1" class="card mb-3 collapse mt-3" style="max-width: 540px;">
+                        <div id="infoArbitro1" class="card mb-3 collapse mt-3 shadow" style="max-width: 540px;">
                             <div class="row g-0">
                                 <div class="col-md-4">
                                     <img src="./imagenes/fotoCard/cardImagen1.png" class="img-fluid rounded-start"
@@ -1479,7 +1468,7 @@
                         </div>
 
                         <!-- card bootstrap-->
-                        <div id="infoJugador2" class="card mb-3 collapse mt-3" style="max-width: 540px;">
+                        <div id="infoArbitro2" class="card mb-3 collapse mt-3 shadow" style="max-width: 540px;">
                             <div class="row g-0">
                                 <div class="col-md-4">
                                     <img src="./imagenes/fotoCard/cardImagen2.jpg" class="img-fluid rounded-start"
@@ -1502,7 +1491,7 @@
                         </div>
 
                         <!-- card bootstrap-->
-                        <div id="infoJugador3" class="card mb-3 collapse mt-3" style="max-width: 540px;">
+                        <div id="infoArbitro3" class="card mb-3 collapse mt-3 shadow" style="max-width: 540px;">
                             <div class="row g-0">
                                 <div class="col-md-4">
                                     <img src="./imagenes/fotoCard/cardImagen3.jpg" class="img-fluid rounded-start"
@@ -1525,7 +1514,7 @@
                         </div>
 
                         <!-- card bootstrap-->
-                        <div id="infoJugador4" class="collapse mt-3 card mb-3" style="max-width: 540px;">
+                        <div id="infoArbitro4" class="collapse mt-3 card mb-3 shadow" style="max-width: 540px;">
                             <div class="row g-0">
                                 <div class="col-md-4">
                                     <img src="./imagenes/fotoCard/cardImagen4.png" class="img-fluid rounded-start"
@@ -1707,7 +1696,7 @@
             <div class="d-flex justify-content-end">
                 <button type="button" class="botones btn btn-primary" data-bs-toggle="modal"
                     data-bs-target="#modalInscripcion">
-                    Apuntate ya.
+                    Apúntate ya.
                 </button>
             </div>
         </div>
@@ -1731,7 +1720,7 @@
                 <div class="modal-body">
                     <form id="formularioInscripcion" class="bg-light p-3 rounded">
                         <div class="mb-3">
-                            <label for="nombre" class="form-label text-bg-danger">Nombre del equipo</label>
+                            <label for="nombreEquipo" class="form-label text-bg-danger">Nombre del equipo</label>
                             <input type="text" class="form-control" id="nombreEquipo" required>
                         </div>
                         <div class="mb-3">
@@ -1743,6 +1732,7 @@
                             <label for="email" class="form-label text-bg-danger">Correo electrónico de
                                 contacto</label>
                             <input type="email" class="form-control" id="email" required>
+                            
                         </div>
                         <div class="mb-3">
                             <label for="modalidad" class="form-label text-bg-danger">Modalidad</label>
@@ -1760,6 +1750,8 @@
                                 placeholder="Escribe los nombres de los jugadores con sus dos apellidos"
                                 required></textarea>
                         </div>
+
+                        
                     </form>
                 </div>
 
@@ -1907,11 +1899,12 @@
                 <div class="modal-body">
                     <h5 class="modal-title mb-3 text-danger" id="modalVoleybolLabel">Noticia de Voleybol</h5>
                     <p class="texto-parrafos">Importante novedad en la normativa de la competición. <br><br>
-                        Se aprueba el enfrentamiento a un sólo partido en campo neutral ebtre los equipos que
-                        resulten de ganar la liga de nuestro instituto y el ganador de la liga que se esta desarrollando
+                        Se aprueba el enfrentamiento a un sólo partido en campo neutral entre el equipo que
+                        resulte de ganar la liga de nuestro instituto y el ganador de la liga que se esta desarrollando
                         en el IES Santa
                         Maria de Alarcos.<br><br>
                         Seguimos apostando por el voley.</p>
+
                 </div>
                 <!-- Footer -->
                 <div class="modal-footer">
@@ -1938,7 +1931,7 @@
                 <!-- Contenido -->
                 <div class="modal-body">
                     <h5 class="modal-title mb-3 text-danger" id="modalAtletismoLabel">Noticia de Atletismo</h5>
-                    <p class="texto-parrafos">Cambios de última hora en las carrera del
+                    <p class="texto-parrafos">Cambios de última hora en la carrera del
                         viernes.<br><br>
                         A causa de las previsiones de lluvia para el próximo viernes y con el fin de que la
                         carrera se celebre en las mejores condiciones posibles,
@@ -1946,6 +1939,10 @@
                         El horario será a las 18:00 y enfrentará a Sonia Martinez y Jose Manuel Carpintero en
                         una carrera que promete ser emocionante.<br><br>
                         No te lo pierdas.</p>
+                    <div class="alert alert-warning" role="alert">
+                        La Organización se reserva el derecho de volver a cambiar el encuentro por previsiones
+                        metereológicas adversas.
+                    </div>
                 </div>
                 <!-- Footer -->
                 <div class="modal-footer">
@@ -2050,12 +2047,19 @@
 
     <section id="seccionCompeticiones" class="container mx-auto my-auto py-4">
         <h3 class="m-3 texto-titulos text-end">Nuestros campeonatos</h3>
+        <!-- 
+            row es una fila en sistema grid.
+            g-4 es el gutter (espacio entre columnas y filas) de 4 unidades bootstrap (1 unidad = 0.25rem)
+            g-md-auto es el gutter automatico para pantallas medianas (md) y superiores
+            g-lg-1 es el gutter de 1 unidad para pantallas grandes (lg) y superiores
+         
+        -->
         <div class="row g-4 g-md-auto g-lg-1  ">
 
 
             <!-- tarjeta-->
             <div class="col-12 col-md-6 col-lg-3">
-                <div class="card h-100 texto-parrafos">
+                <div class="card h-100 texto-parrafos border-danger border-1">
                     <img src="imagenes/logo/futbolsala.jpg" class="card-img-top" class="img-fluid"
                         alt="futbol sala imagen">
                     <div class="card-body ">
@@ -2077,7 +2081,7 @@
 
             <!-- tarjeta-->
             <div class="col-12 col-md-6 col-lg-3">
-                <div class="card h-100 texto-parrafos">
+                <div class="card h-100 texto-parrafos border-danger border-1">
                     <img src="imagenes/logo/vista-frontal-hombre-jugando-baloncesto-solo.jpg" class="card-img-top"
                         class="img-fluid" alt="hombre baloncesto">
                     <div class="card-body">
@@ -2098,7 +2102,7 @@
 
             <!-- tarjeta-->
             <div class="col-12 col-md-6 col-lg-3">
-                <div class="card h-100 texto-parrafos">
+                <div class="card h-100 texto-parrafos border-danger border-1">
                     <img src="imagenes/logo/voleybol-red.avif" class="card-img-top" class="img-fluid"
                         alt="voleibol imagen">
                     <div class="card-body">
@@ -2123,7 +2127,7 @@
 
             <!-- tarjeta-->
             <div class="col-12 col-md-6 col-lg-3">
-                <div class="card h-100 texto-parrafos">
+                <div class="card h-100 texto-parrafos border-danger border-1">
                     <img src="imagenes/logo/atletismoNoticia.jpg" class="card-img-top" class="img-fluid"
                         alt="atletismo imagen">
                     <div class="card-body">

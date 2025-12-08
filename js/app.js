@@ -329,7 +329,9 @@ modalInscripcion.addEventListener('shown.bs.modal', () => {
 // Reseteamos el formulario al cerrar el modal. Capturamos el evento hidden.bs.modal
 modalInscripcion.addEventListener('hidden.bs.modal', () => {
   formulario.reset();
-  formulario.classList.remove('was-validated'); // limpia validación visual
+  
+  formulario.classList.remove('was-validated'); // limpia validación visual cuando cierre el modal. Ahora mismo no hace nada porque no estoy
+  //usando validación visual de bootstrap en el formulario con needs-validation. Lo dejo por si lo uso posteriormente.
 });
 
 

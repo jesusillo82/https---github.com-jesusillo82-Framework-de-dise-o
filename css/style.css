@@ -75,7 +75,7 @@ body {
 
 
 .navBarMenu {
-  background-color: white;
+  background-color: var(--color-principal);
 }
 
 .navBarMenu .nav-link {
@@ -90,7 +90,9 @@ body {
 
 }
 
-/** efecto hover enlaces navbar*/
+
+
+/** efecto hover enlaces navbar dropdown Equipos*/
 ul.texto-enlaces-navbar li:hover,
 ul.texto-enlaces-navbar li a:hover {
   color: var(--color-terciario);
