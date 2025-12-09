@@ -267,7 +267,7 @@ footer button:hover {
   }
 }
 
-/*moviles pequeños*/
+/*moviles pequeños o dispositivos que tengan la pantalla muy estrecha*/
 @media (max-width: 576px) {
 
   /* ajustes del carrusel de noticias*/
